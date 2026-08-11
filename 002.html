@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>场刊 · 蜘蛛侠：崭新之日 · 第二期</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;--ink-soft:#3a3a36;--bronze:#8b6914;--bronze-deep:#6b5010;
+  --crimson:#c0392b;--teal:#3a7a76;--muted:#6b665c;--faint:#9c968a;
+  --rule:#e0dbcf;--bg:#faf8f3;--card:#ffffff;--highlight:#fdf6ec;
+  --spidey-red:#b71c1c;--spidey-blue:#1565c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(250,248,243,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.topbar-title{font-size:15px;font-weight:700;letter-spacing:0.1em}
+.topbar-en{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--bronze);letter-spacing:0.2em}
+.menu-btn{background:none;border:none;font-size:20px;color:var(--bronze);cursor:pointer;padding:4px 8px}
+.drawer{position:fixed;top:0;left:-280px;width:280px;height:100vh;background:var(--card);box-shadow:2px 0 20px rgba(0,0,0,0.1);z-index:200;transition:left 0.3s;overflow-y:auto;padding:20px}
+.drawer.open{left:0}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:150;display:none}
+.drawer-overlay.show{display:block}
+.drawer-title{font-size:18px;font-weight:700;margin-bottom:16px}
+.drawer-item{display:block;padding:10px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-size:14px;cursor:pointer}
+.drawer-item .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.drawer-close{position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer}
+.cover{margin:0 -20px 20px;position:relative;overflow:hidden;display:flex;justify-content:center;background:#0d1117}
+.cover-img{height:420px;width:auto;object-fit:contain;display:block}
+.cover-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 20px 20px;background:linear-gradient(transparent,rgba(13,17,23,0.9))}
+.cover-en{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#e8d8a0;letter-spacing:0.05em}
+.cover-zh{font-size:18px;font-weight:600;color:var(--spidey-red);letter-spacing:0.15em;margin-top:4px}
+.cover-meta{display:flex;margin:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0}
+.cover-meta-item{flex:1;text-align:center;font-size:10px;color:var(--muted);border-right:1px solid var(--rule)}
+.cover-meta-item:last-child{border-right:none}
+.cover-meta-item strong{display:block;font-size:12px;color:var(--ink);margin-top:2px}
+.cover-tagline{font-size:14px;font-weight:600;color:var(--bronze-deep);text-align:center;margin-bottom:4px}
+.section{margin:32px 0 16px;scroll-margin-top:56px}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--bronze);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:4px}
+.section-title{font-size:22px;font-weight:700;line-height:1.35;margin-bottom:2px}
+.section-subtitle{font-family:'Playfair Display',serif;font-size:12px;color:var(--bronze);letter-spacing:0.1em;margin-bottom:16px;font-style:italic}
+.prose{font-size:16px;line-height:1.95;color:var(--ink);text-align:justify}
+.prose p{margin-bottom:16px}
+.prose strong{font-weight:700}
+.prose em{font-style:normal;font-weight:600;color:var(--bronze-deep);border-bottom:1px solid var(--bronze);padding-bottom:1px}
+.sub-heading{font-size:18px;font-weight:700;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--bronze);color:var(--ink)}
+.blockquote{margin:18px 0;padding:16px 20px;background:var(--card);border-left:3px solid var(--bronze);border-radius:0 8px 8px 0}
+.blockquote .text{font-size:15px;line-height:1.9;color:var(--ink)}
+.blockquote .source{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.blockquote .source a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.key-claim{margin:22px 0;padding:18px;border-top:2px solid var(--bronze);border-bottom:2px solid var(--bronze);background:rgba(139,105,20,0.02)}
+.key-claim .text{font-size:17px;font-weight:700;line-height:1.6}
+.key-claim .source{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:20px 0}
+.divider{height:1px;background:var(--rule);margin:28px 0}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.score-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px}
+.score-card .pub{font-family:'Playfair Display',serif;font-size:13px;font-weight:600}
+.score-card .num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--bronze)}
+.score-card .desc{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.stars{font-size:14px;color:var(--bronze);letter-spacing:2px}
+.stars .e{color:var(--rule)}
+.critic{padding:10px 0;border-bottom:1px solid var(--rule)}
+.critic:last-child{border-bottom:none}
+.critic .name{font-size:14px;font-weight:600}
+.critic .name .pub{font-weight:400;color:var(--muted);margin-left:4px;font-size:12px}
+.critic .quote{font-size:14px;line-height:1.8;color:var(--ink);margin-top:4px}
+.specs{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.specs td{padding:4px 6px;border-bottom:1px solid var(--rule);line-height:1.5}
+.specs td:first-child{width:35%;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze)}
+.format-item{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.format-item .rank{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--bronze);font-size:14px;width:28px}
+.format-item .name{flex:1;font-size:14px}
+.format-item .note{font-size:11px;color:var(--muted)}
+.qr-section{text-align:center;margin:32px 0 16px;padding:24px;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+.qr-section img{width:140px;height:140px;margin-bottom:12px}
+.qr-section .label{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.qr-section .url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bronze)}
+.colophon{text-align:center;margin:32px 0 16px;padding:24px 0;border-top:1px solid var(--rule)}
+.colophon .mast{font-size:16px;font-weight:700;letter-spacing:0.15em;margin-bottom:4px}
+.colophon .info{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);line-height:1.8}
+i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+.source-index{font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid var(--rule);margin-top:20px;padding-top:12px}
+.source-index p{margin-bottom:4px}
+.source-index strong{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" onclick="openDrawer()">☰</button>
+  <div><div class="topbar-title">场　刊</div><div class="topbar-en">THE PROGRAMME · 第〇〇二期</div></div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)">No.002</div>
+</div>
+
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  <div class="drawer-title">目　录</div>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-file"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">I</span>影片档案<div class="sub">制作信息与演职员</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-reception"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">II</span>口碑速览<div class="sub">评分汇总与评语</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-editorial"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">III</span>一部关于失去的超英电影<div class="sub">编者前言</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay1"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">IV</span>你的好邻居，一个人的城市<div class="sub">深度影评之一</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay2"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">V</span>分数之间的裂缝<div class="sub">RT 90% 与 MC 66 的落差</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay3"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VI</span>从托比的蛛丝到荷兰弟的肉身<div class="sub">能力进化作为身份隐喻</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-tech"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VII</span>技术细部分析<div class="sub">克雷顿的导演风格演变</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-guide"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VIII</span>观影指南<div class="sub">格式推荐与票房里程碑</div></a>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ 封面 ═══ -->
+  <div class="cover">
+    <img class="cover-img" src="assets/spider-poster.jpg" alt="蜘蛛侠：崭新之日">
+    <div class="cover-overlay">
+      <div class="cover-en">SPIDER-MAN: BRAND NEW DAY</div>
+      <div class="cover-zh">蜘蛛侠：崭新之日</div>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">导演<strong>克雷顿</strong></div>
+    <div class="cover-meta-item">片长<strong>145 分钟</strong></div>
+    <div class="cover-meta-item">制式<strong>IMAX</strong></div>
+    <div class="cover-meta-item">评级<strong>PG-13</strong></div>
+  </div>
+  <div class="cover-tagline">一个人守一座城——荷兰弟蜘蛛侠三部曲的成人礼</div>
+  <div class="meander"></div>
+
+  <!-- ═══ I 影片档案 ═══ -->
+  <div class="section" id="sec-file">
+    <div class="section-label">I — FILM FILE</div>
+    <div class="section-title">影片档案</div>
+    <div class="section-subtitle">Production &amp; Technical Specs</div>
+    <table class="specs">
+      <tr><td>导演</td><td>德斯汀·丹尼尔·克雷顿</td></tr>
+      <tr><td>编剧</td><td>克里斯·麦肯纳　埃里克·萨默斯</td></tr>
+      <tr><td>原著</td><td>漫威漫画《蜘蛛侠》（斯坦·李 / 史蒂夫·迪特科）</td></tr>
+      <tr><td>制片</td><td>凯文·费奇　艾米·帕斯卡尔　阿维·阿拉德</td></tr>
+      <tr><td>摄影指导</td><td>布雷特·帕夫拉克</td></tr>
+      <tr><td>剪辑</td><td>纳特·桑德斯　吉娜·桑索姆　哈里·尹</td></tr>
+      <tr><td>配乐</td><td>迈克尔·贾基诺</td></tr>
+      <tr><td>片长</td><td>145 分钟</td></tr>
+      <tr><td>预算 / 评级</td><td>2.25 亿美元 / PG-13</td></tr>
+      <tr><td>发行</td><td>索尼影业</td></tr>
+      <tr><td>制式</td><td>IMAX 扩展画幅（部分场景）</td></tr>
+      <tr><td>全球票房</td><td><strong>$16.72 亿</strong>（2026 年度冠军）</td></tr>
+      <tr><td>北美开画</td><td><strong>$3.6 亿</strong>（影史第一，超《终局之战》）</td></tr>
+      <tr><td>全球开画</td><td>$9.32 亿（影史第二）</td></tr>
+      <tr><td>破 10 亿</td><td>6 天（影史第二快）</td></tr>
+    </table>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">主要演员</div>
+    <table class="specs">
+      <tr><td>汤姆·赫兰德</td><td>Peter Parker / 蜘蛛侠　独守纽约四年</td></tr>
+      <tr><td>赞达亚</td><td>MJ Jones-Watson　已有新男友</td></tr>
+      <tr><td>萨迪·辛克</td><td>Jean（琴）　寻找被关押的姐妹</td></tr>
+      <tr><td>乔恩·伯恩瑟</td><td>Frank Castle /惩罚者　道德对照</td></tr>
+      <tr><td>弗洛伦斯·皮尤</td><td>叶莲娜·贝洛娃　信息提供者</td></tr>
+      <tr><td>雅各布·巴塔伦</td><td>Ned Leeds　MIT 毕业回纽约</td></tr>
+      <tr><td>马克·鲁法洛</td><td>Bruce Banner / 浩克　被心灵控制</td></tr>
+      <tr><td>特拉梅尔·蒂尔曼</td><td>Bill Metzger　DODC 主管（反派）</td></tr>
+    </table>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">导演背景</div>
+    <div style="font-size:14px;color:var(--ink-soft);line-height:1.8">
+      克雷顿从独立制片起家——《<strong>少年收容所</strong>》（Short Term 12, 2013）以细腻的情感笔触处理青少年创伤——到《<strong>尚气</strong>》（Shang-Chi, 2021）成为首位执导漫威大片的亚裔导演，再到本片。这条路径本身就值得注意：一个以<strong>角色驱动和家庭情感</strong>见长的导演，被选择来执导一部关于孤独和自我牺牲的蜘蛛侠电影。
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ II 口碑速览 ═══ -->
+  <div class="section" id="sec-reception">
+    <div class="section-label">II — RECEPTION</div>
+    <div class="section-title">口碑速览</div>
+    <div class="section-subtitle">Scores &amp; Appraisals</div>
+    <div class="scores">
+      <div class="score-card"><div class="pub">烂番茄</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">90%</div><div class="desc">402 篇，平均 7.6/10。MCU 蜘蛛侠评分最高的一部。</div></div>
+      <div class="score-card"><div class="pub">Metacritic</div><div class="stars">★★★★<span class="e">☆☆</span></div><div class="num">66</div><div class="desc">56 位影评人，「普遍好评」——但与 RT 的 90% 形成显著落差。</div></div>
+      <div class="score-card"><div class="pub">CinemaScore</div><div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--bronze)">A</div><div class="desc">A+ 至 F 量表。PostTrak：88% 观众一定会推荐。</div></div>
+      <div class="score-card"><div class="pub">场刊综合评分</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">3.8</div><div class="desc">导演 4.0　演员 4.5　剧本 3.5　动作 4.0　创新性 3.0</div></div>
+    </div>
+    <div class="meander"></div>
+    <div class="sub-heading">评语</div>
+    <div class="critic"><div class="name">皮特·哈蒙德<span class="pub">Deadline　正面</span></div><div class="quote">「黑暗而惊心动魄的新篇章。荷兰弟的表演、克雷顿的导演和角色情感与超英动作之间的平衡都令人印象深刻。」</div></div>
+    <div class="critic"><div class="name">欧文·格莱伯曼<span class="pub">《综艺》　混合</span></div><div class="quote">「赞扬动作、反派和荷兰弟的表演，但影片『艰苦』、『笨拙地片段式』、『长了半小时』。比自我严肃更缺乏的是情感上的真正投入。」</div></div>
+    <div class="critic"><div class="name">威廉·比比亚尼<span class="pub">TheWrap　高度正面</span></div><div class="quote">「一部关于 Peter Parker 的杰出电影，全系列亮点之一。情感驱动的故事和荷兰弟与伯恩瑟的表演令人赞叹。」</div></div>
+    <div class="critic"><div class="name">约翰·纽金特<span class="pub">Empire　★★★★</span></div><div class="quote">「扎根漫画的忠实风格，蜘蛛侠仍然是漫威手中最好的牌。」</div></div>
+    <div class="critic"><div class="name">大卫·鲁尼<span class="pub">《好莱坞报道》　正面</span></div><div class="quote">「肾上腺素与情感的平衡。『人性一直是蜘蛛侠最大的力量』，荷兰弟的表演前所未有地好。」</div></div>
+    <div class="critic"><div class="name">大卫·埃尔利希<span class="pub">IndieWire　C−</span></div><div class="quote">「沉闷而低沉的动作续集，制造的问题比解决的多。批评节奏、对 MCU 设定的依赖，以及对 Peter 故事线的推进不足。」</div></div>
+    <div class="critic"><div class="name">大卫·费尔<span class="pub">《滚石》　负面</span></div><div class="quote">「过度依赖粉丝服务、MCU 联动和系列铺垫，Spider-Man 的故事反而被挤到一边。Peter 有沦为『自己电影里的配角』的风险。」</div></div>
+    <div class="critic"><div class="name">彼得·布拉德肖<span class="pub">《卫报》　混合</span></div><div class="quote">「野心勃勃的基调、强劲的表演和情感聚焦，但影片不够均匀，部分熟悉的超英元素限制了它的冲击力。」</div></div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ III 编者前言 ═══ -->
+  <div class="section" id="sec-editorial">
+    <div class="section-label">III — EDITORIAL</div>
+    <div class="section-title">一部关于失去的超英电影</div>
+    <div class="section-subtitle">What This Film Means</div>
+    <div class="prose">
+      <p>$16.72 亿全球票房。北美开画 $3.6 亿——影史第一，超越《复仇者联盟：终局之战》。从任何商业指标来看，《蜘蛛侠：崭新之日》都是 2026 年最大的现象。</p>
+      <p>但这部最赚钱的蜘蛛侠电影，恰恰是关于「一无所有」的。Dr. Strange 的咒语让世界遗忘了 Peter Parker 的存在。四年过去，他独自守护纽约街头，不与 MJ 和 Ned 重建联系。他在梅婶墓前停留。他放弃了自己作为 Peter Parker 的生活，完全变成了蜘蛛侠。</p>
+      <p>这是一部关于<strong>自我牺牲的代价</strong>的电影——而不仅仅是又一部超英动作片。导演克雷顿从独立制片（《少年收容所》）起家，以处理青少年情感创伤见长。他把这种作者性带入了 MCU：影片中最有力的场景不是动作戏，而是 Peter 在街上偶遇 MJ 看到她亲吻新男友的那一刻，以及他在梅婶墓前的沉默。</p>
+      <p>但 RT 90% 和 Metacritic 66 之间的落差值得注意。烂番茄告诉你「90% 的评论者认为这部电影值得推荐」——但 Metacritic 告诉你另一个故事：<strong>大多数评论者认为它「还不错」，但没有人认为它真正杰出</strong>。这种「普遍还行但缺乏共识性卓越」的状态，是否定义了当前超级英雄电影的批评天花板？</p>
+      <p>本刊的判断是：<strong>这是 Holland 三部曲中最成熟、最具情感深度的一部，但「成熟」本身不等于「好」。</strong>当一部蜘蛛侠电影最精彩的部分是角色静静坐在墓碑旁时，你既应该为它的勇气鼓掌，也应该追问：我们到底在期待什么样的超级英雄电影？</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ IV 影评之一 ═══ -->
+  <div class="section" id="sec-essay1">
+    <div class="section-label">IV — ESSAY I</div>
+    <div class="section-title">你的好邻居，一个人的城市</div>
+    <div class="section-subtitle">The Loneliness of Spider-Man</div>
+    <div class="prose">
+      <p>蜘蛛侠的核心定位从来不是「拯救世界」——那是复仇者联盟的工作。蜘蛛侠的核心定位是「你的好邻居」。他巡逻的不是银河系，是皇后区的街道。他的敌人不是宇宙霸主，是街头罪犯。这种<strong>尺度感</strong>——英雄与社区之间的亲密距离——是蜘蛛侠区别于所有其他超英角色的根本特征。</p>
+      <p>克雷顿的影片忠实于这个核心。开场的四十年时间跳跃之后（片内四年），我们看到的是一个完全沉浸在街头执法中的 Peter Parker。他打击蝎子人（Mac Gargan）和手合会忍者，赢得了警察探员 Jean DeWolff 的信任。他没有复仇者联盟的资源，没有 Stark 工业的科技，甚至没有一个知道他真名的朋友。他只是——一个在纽约街头巡逻的好邻居。</p>
+      <p>但这部影片的独特之处在于：它将「好邻居」的身份推到了<strong>极端</strong>。Peter 不仅失去了与 MJ 和 Ned 的联系——他选择了不重新建立联系。他在公寓里写了一封给 MJ 的「自我介绍信」，却始终没有寄出。这封信的存在，证明他仍然渴望被认出、被记得——但他的「自我牺牲」伦理不允许他这么做。<strong>他把自己变成了一种纯粹的功能：守护者。功能没有私生活，功能不需要被爱。</strong></p>
+    </div>
+    <div class="blockquote">
+      <div class="text">「克雷顿说 Peter 在『将全部存在奉献给蜘蛛侠』。荷兰弟认为这是一个『独特而深刻』的超英故事。」</div>
+      <div class="source">—— 汤姆·赫兰德，接受采访（2026.07）</div>
+    </div>
+    <div class="prose">
+      <p>《好莱坞报道》的大卫·鲁尼敏锐地指出：「人性一直是蜘蛛侠最大的力量」。这句话在本片中获得了一种苦涩的含义。Peter 的人性——他对 MJ 的感情、对梅婶的思念、对孤独的疲惫——恰恰是影片的情感引擎。但这些情感不是用来「升级」英雄的，而是用来<strong>展示他正在为英雄身份付出什么代价</strong>。</p>
+      <p>TheWrap 的比比亚尼称本片为「一部关于 Peter Parker 的杰出电影」——这个评价的关键词不是「蜘蛛侠」，而是「Peter Parker」。影片最好的时刻都在面具之下：不是在高楼之间荡蛛丝的奇观，而是在出租屋里看着 MJ 社交媒体动态的沉默。</p>
+      <p>但《综艺》的格莱伯曼提出了合理的质疑：影片「长了半小时」，「笨拙地片段式」。当 Peter 的孤独被反复用动作场景来打断时，<strong>情感节奏的断裂</strong>就不可避免——每一次他刚要沉入内心，影片就需要把他拉出来打一架。这是超英电影的结构性限制：商业公式要求动作奇观的密度，而角色深度要求留白。克雷顿试图同时满足两者，结果可能是两头不讨好。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ V 影评之二 ═══ -->
+  <div class="section" id="sec-essay2">
+    <div class="section-label">V — ESSAY II</div>
+    <div class="section-title">分数之间的裂缝</div>
+    <div class="section-subtitle">RT 90% vs MC 66: The Critical Gap</div>
+    <div class="prose">
+      <p>烂番茄 90%，Metacritic 66。这是本期最值得讨论的数字。</p>
+      <p>两个评分体系衡量的是不同的东西。烂番茄衡量的是<strong>推荐比例</strong>：90% 意味着 402 位评论者中有 362 位给出了「正面」评价——但「正面」的门槛很低，只要超过 6/10 或 3/5 就算「新鲜」。Metacritic 衡量的是<strong>加权平均分</strong>：66 分（满分 100）意味着评论者的共识更接近「不错」而非「优秀」。</p>
+      <p>换句话说：绝大多数评论者认为《蜘蛛侠：崭新之日》值得一看——但<strong>没有多少人认为它真正杰出</strong>。这就是裂缝的含义。</p>
+    </div>
+    <div class="key-claim">
+      <div class="text">「普遍还行但缺乏共识性卓越」——这是当前超级英雄电影的批评天花板吗？</div>
+      <div class="source">—— 场刊评论</div>
+    </div>
+    <div class="prose">
+      <p>IndieWire 的大卫·埃尔利希给出了 C−——这是本片最严厉的评价之一。他称其为「沉闷而低沉的动作续集」，「制造的问题比解决的多」。这不仅仅是对一部电影的评价，更是对一种模式的质疑：当 MCU 的跨文本叙事要求每一部电影都为未来的续集、联动和宇宙铺设做铺垫时，<strong>单片本身的故事完整性就被牺牲了</strong>。</p>
+      <p>《滚石》的大卫·费尔进一步推进了这个批评：Peter「有沦为自己电影里的配角的风险」。当惩罚者、浩克、叶莲娜等客串角色占据了大量银幕时间时，蜘蛛侠自己的故事——一个孤独的年轻人学会不再独自承担一切——反而被挤压到了边缘。</p>
+      <p>但这里有一个微妙的区分需要把握。费尔和埃尔利希的批评指向的不是影片的<strong>质量</strong>，而是影片的<strong>优先级</strong>。克雷顿在角色情感层面的处理确实比大多数 MCU 电影更细腻——荷兰弟的表演、赞达亚的化学反应、伯恩瑟的道德对照都是扎实的。问题在于：这些角色层面的努力被<strong>置于了一个仍然以动作奇观和宇宙联动为骨架的商业框架中</strong>。框架不允许情感呼吸，只允许情感在两场动作戏之间匆匆闪过。</p>
+      <p>这就是 RT 90% / MC 66 裂缝的根源：评论者在「这部电影做得不错」的层面达成了共识（RT 高分），但在「这部电影是否达到了它本可以达到的高度」的层面产生了分歧（MC 低分）。前者评判的是执行，后者评判的是野心。<strong>克雷顿的执行力得到了认可，但商业框架限制了他的野心——或者说，限制了他将野心完全展开的空间。</strong></p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VI 影评之三 ═══ -->
+  <div class="section" id="sec-essay3">
+    <div class="section-label">VI — ESSAY III</div>
+    <div class="section-title">从托比的蛛丝到荷兰弟的肉身</div>
+    <div class="section-subtitle">The Evolution of Powers as Identity</div>
+    <div class="prose">
+      <p>本片最容易被当作「彩蛋」略过的细节，可能也是最有意味的：Peter 的能力开始进化。他的眼睛偶尔变成全黑；感官大幅增强；最重要的是——他的手腕开始分泌<strong>有机蛛丝</strong>，不再需要机械蛛丝发射器。</p>
+      <p>对熟悉蜘蛛侠电影历史的观众来说，这个变化的指向是明确的：托比·马奎尔版的蜘蛛侠（萨姆·雷米三部曲，2002–2007）就是有机蛛丝。安德鲁·加菲尔德版（2012–2014）和汤姆·赫兰德版（2017 至今）都使用了机械发射器——后者还得到了托尼·斯塔克的科技加持。有机蛛丝 = 肉身性；机械蛛丝 = 科技性。这不是一个无足轻重的区别。</p>
+      <p>荷兰弟版的 Peter Parker 一直被定义为<strong>科技少年</strong>——他的战衣来自 Stark 工业，他的蛛丝是工程产品，他的战术依赖于 AI 和无人机。这种科技属性与 MCU 的世界观高度一致：在 MCU 中，超能力几乎总是与科技和资本挂钩。</p>
+      <p>但当 Peter 在本片中失去了一切外部支持——没有 Stark 科技，没有复仇者联盟，没有任何人知道他是谁——他的能力反而<strong>回归了肉身</strong>。有机蛛丝的出现不是「升级」，而是<strong>退化到更原始、更本能的状态</strong>。他不再是穿着 Stark 战衣的科技少年；他是<strong>一个身体本身就在分泌蛛丝的变异人</strong>。</p>
+      <p>这个转变与影片整体的身份叙事完美吻合：Peter 从一个依赖外部科技和社交网络的少年英雄，变成了一个完全依靠自己身体和本能的孤独守护者。<strong>当科技被剥离，剩下的是肉身——是脆弱的、会受伤的、但也是不可剥夺的存在。</strong></p>
+      <p>黑色眼瞳的间歇出现进一步强化了这种「去人性化」的暗示：Peter 的蜘蛛一面正在占据更多的空间。他不仅失去了社会身份（没有人记得他），也在逐渐失去人类的外形特征。影片中他在愤怒中暴打蝎子人、误伤警察的场景，是这种失控的具象化——<strong>当一个英雄的权力完全来自肉身而非工具时，他离暴力只有一步之遥</strong>。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VII 技术分析 ═══ -->
+  <div class="section" id="sec-tech">
+    <div class="section-label">VII — CRAFTSMANSHIP</div>
+    <div class="section-title">技术细部分析</div>
+    <div class="section-subtitle">Cretton's Directorial Evolution</div>
+    <div class="prose">
+      <p><strong>从独立制片到漫威：克雷顿的路径</strong></p>
+      <p>德斯汀·丹尼尔·克雷顿的导演生涯始于《少年收容所》（Short Term 12, 2013）——一部关于青少年寄养机构的低成本独立片，以惊人的情感细腻度处理了创伤、信任和照护的主题。之后他拍了《正义的慈悲》（Just Mercy, 2019）和《尚气与十环传奇》（2021）。从独立到漫威再到蜘蛛侠，这条路径的核心一贯性在于：<strong>他始终在处理「被体制忽视的人」的故事</strong>。</p>
+      <p>在《蜘蛛侠：崭新之日》中，这种作者性体现为：Peter Parker 是一个被体制「遗忘」的人——不是被错误对待，而是被魔法从所有人的记忆中抹去。克雷顿用他一贯的耐心来处理这种「不存在」的孤独——长时间的沉默、角色的面部特写、日常生活的碎片化呈现。</p>
+      <p><strong>摄影与动作调度</strong></p>
+      <p>摄影指导布雷特·帕夫拉克此前主要拍摄独立电影（包括克雷顿的《少年收容所》和《尚气》）。他的风格以<strong>手持摄影的自然主义</strong>为特征——在动作场景中，这意味着比典型 MCU 电影更多的晃动感和临场感。纽约街头的追逐段落中，镜头紧跟 Peter 的身体运动，创造了一种<strong>身体性的参与感</strong>——观众不是在观看动作，而是在经历动作。这种处理与影片「肉身回归」的主题形成了呼应。</p>
+      <p><strong>配乐：贾基诺的主题变奏</strong></p>
+      <p>迈克尔·贾基诺回归为第三部荷兰弟蜘蛛侠配乐。他的蜘蛛侠主题在前两部中已经确立了辨识度——在《英雄无归》中加入了更悲怆的变奏。本片中，主题旋律进一步简化——<strong>减少了铜管的辉煌感，增加了弦乐的内省性</strong>。这种变化与 Peter 的处境一致：他不再是一个在高楼上俯瞰城市的英雄，而是一个在街巷中沉默巡逻的守护者。音乐跟着他一起降低了高度。</p>
+      <p><strong>IMAX 扩展画幅</strong></p>
+      <p>影片在部分场景中使用了 IMAX 扩展画幅——但与诺兰《奥德赛》的全画幅叙事策略不同，本片的 IMAX 画幅主要用于<strong>动作奇观段落的纵向展开</strong>，而非叙事性的空间表达。这反映了 MCU 对 IMAX 格式的一贯定位：奇观增强器，而非叙事工具。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VIII 观影指南 ═══ -->
+  <div class="section" id="sec-guide">
+    <div class="section-label">VIII — VIEWING GUIDE</div>
+    <div class="section-title">观影指南</div>
+    <div class="section-subtitle">Format Rankings &amp; Box Office Milestones</div>
+    <div class="format-item"><span class="rank">01</span><span class="name">IMAX（扩展画幅）</span><span class="note">推荐</span></div>
+    <div class="format-item"><span class="rank">02</span><span class="name">杜比影院</span><span class="note">动作场景最佳</span></div>
+    <div class="format-item"><span class="rank">03</span><span class="name">ScreenX / 4DX</span><span class="note">沉浸体验</span></div>
+    <div class="format-item"><span class="rank">04</span><span class="name">普通数字</span><span class="note">可用</span></div>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:8px">票房里程碑</div>
+    <table class="specs">
+      <tr><td>北美开画</td><td>$3.6 亿（影史第一，超《终局之战》$3.57 亿）</td></tr>
+      <tr><td>全球开画</td><td>$9.32 亿（影史第二）</td></tr>
+      <tr><td>破 $10 亿</td><td>6 天（影史第二快，仅次于《终局之战》5 天）</td></tr>
+      <tr><td>全球总票房</td><td>$16.72 亿（2026 年度冠军）</td></tr>
+      <tr><td>北美总票房</td><td>$6.54 亿</td></tr>
+      <tr><td>海外总票房</td><td>$10.18 亿（含中国 $1.867 亿）</td></tr>
+    </table>
+    <div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.75">
+      影片预售创五年来纪录（自 2021 年《英雄无归》以来），杜比影院预售票近三分之二在首日售罄。全球 IMAX 排片自 8 月 6 日起与《奥德赛》共享数字银幕。
+    </div>
+  </div>
+
+  <!-- ═══ 二维码 ═══ -->
+  <div class="qr-section">
+    <img src="assets/qr.png" alt="扫码访问场刊">
+    <div class="label">扫码查看场刊全文</div>
+    <div class="url">ren1003497048-del.github.io/changkan</div>
+  </div>
+
+  <!-- ═══ 来源索引 ═══ -->
+  <div class="source-index">
+    <p><strong>影评来源：</strong>Deadline / Variety / TheWrap / Empire / THR / IndieWire / Rolling Stone / 卫报</p>
+    <p><strong>数据来源：</strong>Wikipedia / Rotten Tomatoes / Metacritic / Box Office Mojo，截至 2026.08.09</p>
+    <p><strong>导演采访：</strong>赫兰德接受采访（2026.07）；克雷顿 IndieWire 访谈</p>
+  </div>
+
+  <!-- ═══ 封底 ═══ -->
+  <div class="colophon">
+    <div class="mast">场　刊</div>
+    <div style="font-family:'Playfair Display',serif;font-size:11px;color:var(--bronze);letter-spacing:0.2em;margin-bottom:8px;font-style:italic">THE PROGRAMME</div>
+    <div class="info">
+      观影之前，先翻场刊<br><br>
+      第〇〇二期　蜘蛛侠：崭新之日<br>
+      2026 年 8 月 12 日<br><br>
+      新片信息的深度速览 · 权威影评的汇编评注<br><br>
+      © 2026 The Programme · 场刊<br>
+      ren1003497048-del.github.io/changkan
+    </div>
+  </div>
+
+</div>
+
+<script>
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+</script>
+
+</body>
+</html>
