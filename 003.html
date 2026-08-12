@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>场刊 · 挽救计划 · 第三期</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;--ink-soft:#3a3a36;--bronze:#8b6914;--bronze-deep:#6b5010;
+  --crimson:#8b2020;--teal:#3a7a76;--muted:#6b665c;--faint:#9c968a;
+  --rule:#e0dbcf;--rule-fine:#ede8de;--bg:#faf8f3;--card:#ffffff;
+  --highlight:#fdf6ec;--paper:#faf8f3;
+  --space-deep:#0a0e1a;--space-blue:#1a2540;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(250,248,243,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.topbar-title{font-size:15px;font-weight:700;letter-spacing:0.1em}
+.topbar-en{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--bronze);letter-spacing:0.2em}
+.menu-btn{background:none;border:none;font-size:20px;color:var(--bronze);cursor:pointer;padding:4px 8px}
+.drawer{position:fixed;top:0;left:-280px;width:280px;height:100vh;background:var(--card);box-shadow:2px 0 20px rgba(0,0,0,0.1);z-index:200;transition:left 0.3s;overflow-y:auto;padding:20px}
+.drawer.open{left:0}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:150;display:none}
+.drawer-overlay.show{display:block}
+.drawer-title{font-size:18px;font-weight:700;margin-bottom:16px}
+.drawer-item{display:block;padding:10px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-size:14px;cursor:pointer}
+.drawer-item .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.drawer-close{position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer}
+.cover{margin:0 -20px 20px;position:relative;overflow:hidden;background:var(--space-deep)}
+.cover-img{width:100%;height:400px;object-fit:cover;display:block;opacity:0.9}
+.cover-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 20px 20px;background:linear-gradient(transparent,rgba(10,14,26,0.92))}
+.cover-en{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#e8d8a0;letter-spacing:0.05em}
+.cover-zh{font-size:18px;font-weight:600;color:var(--teal);letter-spacing:0.15em;margin-top:4px}
+.cover-meta{display:flex;margin:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0}
+.cover-meta-item{flex:1;text-align:center;font-size:10px;color:var(--muted);border-right:1px solid var(--rule)}
+.cover-meta-item:last-child{border-right:none}
+.cover-meta-item strong{display:block;font-size:12px;color:var(--ink);margin-top:2px}
+.cover-tagline{font-size:14px;font-weight:600;color:var(--bronze-deep);text-align:center;margin-bottom:4px}
+.section{margin:32px 0 16px;scroll-margin-top:56px}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--bronze);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:4px}
+.section-title{font-size:22px;font-weight:700;line-height:1.35;margin-bottom:2px}
+.section-subtitle{font-family:'Playfair Display',serif;font-size:12px;color:var(--bronze);letter-spacing:0.1em;margin-bottom:16px;font-style:italic}
+.prose{font-size:16px;line-height:1.95;color:var(--ink);text-align:justify}
+.prose p{margin-bottom:16px}
+.prose strong{font-weight:700}
+.prose em{font-style:normal;font-weight:600;color:var(--bronze-deep);border-bottom:1px solid var(--bronze);padding-bottom:1px}
+.sub-heading{font-size:18px;font-weight:700;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--bronze);color:var(--ink)}
+.blockquote{margin:18px 0;padding:16px 20px;background:var(--card);border-left:3px solid var(--bronze);border-radius:0 8px 8px 0}
+.blockquote .text{font-size:15px;line-height:1.9;color:var(--ink)}
+.blockquote .source{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.blockquote .source a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.key-claim{margin:22px 0;padding:18px;border-top:2px solid var(--bronze);border-bottom:2px solid var(--bronze);background:rgba(139,105,20,0.02)}
+.key-claim .text{font-size:17px;font-weight:700;line-height:1.6}
+.key-claim .source{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:20px 0}
+.divider{height:1px;background:var(--rule);margin:28px 0}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.score-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px}
+.score-card .pub{font-family:'Playfair Display',serif;font-size:13px;font-weight:600}
+.score-card .num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--bronze)}
+.score-card .desc{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.stars{font-size:14px;color:var(--bronze);letter-spacing:2px}
+.stars .e{color:var(--rule)}
+.critic{padding:10px 0;border-bottom:1px solid var(--rule)}
+.critic:last-child{border-bottom:none}
+.critic .name{font-size:14px;font-weight:600}
+.critic .name .pub{font-weight:400;color:var(--muted);margin-left:4px;font-size:12px}
+.critic .quote{font-size:14px;line-height:1.8;color:var(--ink);margin-top:4px}
+.specs{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.specs td{padding:4px 6px;border-bottom:1px solid var(--rule);line-height:1.5}
+.specs td:first-child{width:35%;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze)}
+.format-item{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.format-item .rank{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--bronze);font-size:14px;width:28px}
+.format-item .name{flex:1;font-size:14px}
+.format-item .note{font-size:11px;color:var(--muted)}
+.qr-section{text-align:center;margin:32px 0 16px;padding:24px;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+.qr-section img{width:140px;height:140px;margin-bottom:12px}
+.qr-section .label{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.qr-section .url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bronze)}
+.colophon{text-align:center;margin:32px 0 16px;padding:24px 0;border-top:1px solid var(--rule)}
+.colophon .mast{font-size:16px;font-weight:700;letter-spacing:0.15em;margin-bottom:4px}
+.colophon .info{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);line-height:1.8}
+i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+.source-index{font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid var(--rule);margin-top:20px;padding-top:12px}
+.source-index p{margin-bottom:4px}
+.source-index strong{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" onclick="openDrawer()">☰</button>
+  <div><div class="topbar-title">场　刊</div><div class="topbar-en">THE PROGRAMME · 第〇〇三期</div></div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)">No.003</div>
+</div>
+
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  <div class="drawer-title">目　录</div>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-file"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">I</span>影片档案<div class="sub">制作信息与演职员</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-reception"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">II</span>口碑速览<div class="sub">评分汇总与评语</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-editorial"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">III</span>一部用手做出来的科幻电影<div class="sub">编者前言</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay1"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">IV</span>与一块石头做朋友<div class="sub">跨物种友谊的银幕谱系</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay2"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">V</span>伟大的拼贴术<div class="sub">「电影回收」还是致敬美学？</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay3"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VI</span>不回家的英雄<div class="sub">从奥德修斯到莱兰·格雷斯</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-tech"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VII</span>技术细部分析<div class="sub">弗雷泽的镜头与洛基的偶师</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-guide"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VIII</span>观影指南<div class="sub">格式推荐与票房里程碑</div></a>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ 封面 ═══ -->
+  <div class="cover">
+    <div class="cover-img" style="background:linear-gradient(135deg,var(--space-deep),var(--space-blue));display:flex;align-items:center;justify-content:center">
+      <div style="text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#e8d8a0;letter-spacing:0.05em;opacity:0.9">PROJECT</div>
+        <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#e8d8a0;letter-spacing:0.05em;opacity:0.9">HAIL MARY</div>
+        <div style="font-size:22px;font-weight:600;color:var(--teal);letter-spacing:0.2em;margin-top:12px">挽　救　计　划</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:0.3em;margin-top:16px">★ ★ ★ ★ ☆</div>
+      </div>
+    </div>
+    <div class="cover-overlay" style="background:linear-gradient(transparent,rgba(10,14,26,0.95))">
+      <div class="cover-en">PROJECT HAIL MARY</div>
+      <div class="cover-zh">挽　救　计　划</div>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">导演<strong>罗德与米勒</strong></div>
+    <div class="cover-meta-item">片长<strong>156 分钟</strong></div>
+    <div class="cover-meta-item">制式<strong>IMAX</strong></div>
+    <div class="cover-meta-item">评级<strong>PG-13</strong></div>
+  </div>
+  <div class="cover-tagline">用手做出来的科幻电影——一个关于友谊、科学与不回家的故事</div>
+  <div class="meander"></div>
+
+  <!-- ═══ I 影片档案 ═══ -->
+  <div class="section" id="sec-file">
+    <div class="section-label">I — FILM FILE</div>
+    <div class="section-title">影片档案</div>
+    <div class="section-subtitle">Production &amp; Technical Specs</div>
+    <table class="specs">
+      <tr><td>导演</td><td>菲尔·罗德（Phil Lord）与克里斯托弗·米勒（Christopher Miller）</td></tr>
+      <tr><td>编剧</td><td>德鲁·高达（Drew Goddard）</td></tr>
+      <tr><td>原著</td><td>安迪·韦尔《挽救计划》（Project Hail Mary, 2021）</td></tr>
+      <tr><td>制片</td><td>艾米·帕斯卡尔　瑞恩·高斯林　罗德　米勒　安迪·韦尔</td></tr>
+      <tr><td>摄影指导</td><td>格雷格·弗雷泽（Greig Fraser）</td></tr>
+      <tr><td>剪辑</td><td>乔尔·内格龙（Joel Negron）</td></tr>
+      <tr><td>配乐</td><td>丹尼尔·彭伯顿（Daniel Pemberton）</td></tr>
+      <tr><td>片长</td><td>156 分钟</td></tr>
+      <tr><td>预算 / 评级</td><td>$2.48 亿 / PG-13</td></tr>
+      <tr><td>发行</td><td>Amazon MGM Studios（北美）/ 索尼（国际）</td></tr>
+      <tr><td>首映</td><td>2026.03.09（伦敦帝国电影院）</td></tr>
+      <tr><td>北美公映</td><td>2026.03.20</td></tr>
+      <tr><td>摄影机</td><td>Arri Alexa 65（6.5K / 20MP）</td></tr>
+      <tr><td>画幅</td><td>IMAX 1.43:1 / 常规 2:1（Univisium）</td></tr>
+      <tr><td>全球票房</td><td><strong>$6.843 亿</strong>（2026 年第七）</td></tr>
+      <tr><td>北美开画</td><td><strong>$8060 万</strong>（Amazon MGM 史上最大开画）</td></tr>
+      <tr><td>全球开画</td><td>$1.41 亿</td></tr>
+    </table>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">主要演员</div>
+    <table class="specs">
+      <tr><td>瑞恩·高斯林</td><td>Ryland Grace 莱兰·格雷斯　初中科学老师 / 前分子生物学家</td></tr>
+      <tr><td>桑德拉·许勒</td><td>Eva Stratt 伊娃·斯特拉特　国际任务负责人</td></tr>
+      <tr><td>詹姆斯·奥尔蒂斯</td><td>Rocky 洛基　<strong>实体偶操控 + 配音</strong>　5 人偶师团队领队</td></tr>
+      <tr><td>莱昂内尔·博伊斯</td><td>Carl　安保人员</td></tr>
+      <tr><td>梁肯（Ken Leung）</td><td>Yao Li-Jie　宇航员</td></tr>
+    </table>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">导演背景</div>
+    <div style="font-size:14px;color:var(--ink-soft);line-height:1.8">
+      罗德与米勒从动画起家——《<strong>乐高大电影</strong>》（The Lego Movie, 2014）以颠覆性喜剧和「一切都很棒」的主题曲征服全球票房——到《<strong>蜘蛛侠：平行宇宙</strong>》（Spider-Man: Into the Spider-Verse, 2018）以制片人身份推动了动画视觉的革命，获得奥斯卡最佳动画长片。2018 年他们在《游侠索罗》拍摄中途被卢卡斯影业解雇，此后转向拥有更大创作自主权的项目。《挽救计划》是他们在真人导演领域的重要回归——一个以<strong>角色驱动和情感连接</strong>见长的导演组合，被选择来讲述一个关于跨物种友谊的硬科幻故事。
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ II 口碑速览 ═══ -->
+  <div class="section" id="sec-reception">
+    <div class="section-label">II — RECEPTION</div>
+    <div class="section-title">口碑速览</div>
+    <div class="section-subtitle">Scores &amp; Appraisals</div>
+    <div class="scores">
+      <div class="score-card"><div class="pub">烂番茄</div><div class="stars">★★★★★<span class="e">☆</span></div><div class="num">95%</div><div class="desc">424 篇，平均 8.2/10。年度最高分科幻片之一。</div></div>
+      <div class="score-card"><div class="pub">Metacritic</div><div class="stars">★★★★<span class="e">☆☆</span></div><div class="num">77</div><div class="desc">60 位影评人，「普遍好评」。RT 与 MC 高度一致。</div></div>
+      <div class="score-card"><div class="pub">CinemaScore</div><div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--bronze)">A</div><div class="desc">A+ 至 F 量表。观众口碑极佳。</div></div>
+      <div class="score-card"><div class="pub">场刊综合评分</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">4.2</div><div class="desc">导演 4.5　演员 4.5　剧本 4.0　视觉 4.5　创新性 3.5</div></div>
+    </div>
+    <div class="meander"></div>
+    <div class="sub-heading">评语</div>
+    <div class="critic"><div class="name">大卫·鲁尼<span class="pub">《好莱坞报道》　高度正面</span></div><div class="quote">「瑞恩·高斯林证明了他能和一块石头产生化学反应——一场被人性与希望温暖的惊心动魄的太空奥德赛。」</div></div>
+    <div class="critic"><div class="name">G·艾伦·约翰逊<span class="pub">《旧金山纪事报》　高度正面</span></div><div class="quote">「一部家庭爆米花电影的杰作，令人惊叹的手工制作设计和出色的生物设计与偶戏。」</div></div>
+    <div class="critic"><div class="name">布莱恩·特鲁伊特<span class="pub">USA Today　★★★★</span></div><div class="quote">「那种有着大想法的老派爆米花电影——斯皮尔伯格和乔治·卢卡斯当年会拍的那种，所有年龄段的孩子都会为之着迷并买玩具。」</div></div>
+    <div class="critic"><div class="name">罗比·科林<span class="pub">《每日电讯报》　正面</span></div><div class="quote">「它自己有多少原创想法？也许不多。但它把别人的精华混剪带编得如此出彩——对那些经典为何奏效的理解如此透彻——让人很难不被席卷。」</div></div>
+    <div class="critic"><div class="name">艾米·尼科尔森<span class="pub">《洛杉矶时报》　正面</span></div><div class="quote">「库布里克的冷峻《2001》启发了 iPad，而罗德与米勒想启发一个更好的我们。」</div></div>
+    <div class="critic"><div class="name">兰迪·迈尔斯<span class="pub">The Mercury News　★★★½</span></div><div class="quote">「让观众着迷的不仅是视觉和对高斯林表演的敬意，还有它从致敬 E.T.、《领航员》等经典的场景中注入的那份童心般的惊叹。」</div></div>
+    <div class="critic"><div class="name">瑞安·库珀<span class="pub">The American Prospect　正面</span></div><div class="quote">「对英雄主义令人震惊地真实的刻画」，且是「少数比原著好得多的电影之一」。</div></div>
+    <div class="critic"><div class="name">巴里·赫兹<span class="pub">《环球邮报》　混合</span></div><div class="quote">「在几乎每一个转折处，影片都试图说服你它是开创性的、创新的电影制作。但实际上，它是一个宏大的电影回收行为——将熟悉的、令人安慰的碎片融合在一起，决心取悦观众和温暖人心。」</div></div>
+    <div class="critic"><div class="name">彼得·布拉德肖<span class="pub">《卫报》　混合</span></div><div class="quote">「高斯林是一个毫不费力的魅力型银幕演员，他让影片保持了可看性，尽管影片本身有沉闷的时刻和一种小狗般的傻气……也许令人耳目一新的是，影片不追求诺兰《星际穿越》那种震撼的敬畏。」</div></div>
+    <div class="critic"><div class="name">尼古拉斯·巴伯<span class="pub">BBC　正面</span></div><div class="quote">将其列为 2026 年迄今最佳影片之一。</div></div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ III 编者前言 ═══ -->
+  <div class="section" id="sec-editorial">
+    <div class="section-label">III — EDITORIAL</div>
+    <div class="section-title">一部用手做出来的科幻电影</div>
+    <div class="section-subtitle">What This Film Means</div>
+    <div class="prose">
+      <p>烂番茄 95%，Metacritic 77，CinemaScore A——三项评分高度一致。在经历了第二期《蜘蛛侠》RT 90% 与 MC 66 之间的裂缝之后，这种批评共识本身就值得注意：这一次，几乎所有人都同意这部电影是好的，而且在「好」的层面上分歧不大。</p>
+      <p>但更值得注意的是另一组数字：五个偶师。洛基——这部影片中与高斯林搭档的异星伙伴——不是 CGI 生成的。他是一个<strong>实体偶</strong>，由五人偶师团队操控，团队绰号「Rockyteers」，领头人詹姆斯·奥尔蒂斯同时为角色配音。在一个几乎每一部科幻大片都依赖计算机生成图像的时代，这个选择近乎固执。</p>
+      <p>这种固执贯穿了整部影片。格雷格·弗雷泽用 Arri Alexa 65 大画幅摄影机拍摄，配合旋转 90° 的变形宽银幕镜头来实现真正的 IMAX 1.43:1 画幅——这是工程上的极端方案，目的只有一个：让画面拥有胶片般的物质密度。实体布景优先于绿幕。手工艺优先于像素。</p>
+      <p>这是罗德与米勒的作者性宣言。他们从动画起家（《乐高大电影》），以制片人的身份推动了《蜘蛛侠：平行宇宙》的视觉革命，如今在真人电影领域做出了一个出人意料的选择：在一部关于星际旅行的硬科幻电影中，他们选择用手去做。</p>
+      <p>本刊的判断是：<strong>这是 2026 年最值得认真对待的科幻电影之一——不是因为它讲了什么故事（安迪·韦尔的原著已经被足够多人讨论），而是因为它选择用什么方式讲故事。</strong>当《环球邮报》的赫兹批评它是「电影回收」时，他说的没错——但问题在于，回收本身是否也是一种策略？当《每日电讯报》的科林说它是一盘「编得出彩的精华混剪带」时，他指向的可能不是缺陷，而是一种自觉的致敬美学。</p>
+      <p>而格雷斯——这个失败的学者、中学科学老师、最初拒绝任务的懦夫——最终选择留在洛基的星球，不回地球。在我们的创刊号中，诺兰的奥德修斯历经十年漂泊回到伊萨卡；而在这里，格雷斯发现了另一种答案：也许回家不是唯一的结局。也许找到第二个家，也是一种回家。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ IV 影评之一 ═══ -->
+  <div class="section" id="sec-essay1">
+    <div class="section-label">IV — ESSAY I</div>
+    <div class="section-title">与一块石头做朋友</div>
+    <div class="section-subtitle">Cross-Species Friendship on Screen</div>
+    <div class="prose">
+      <p>《好莱坞报道》的大卫·鲁尼给出了一个看似荒谬却极其精准的评价：高斯林证明了他「能和一块石头产生化学反应」。这个评价的关键词不是高斯林，而是「石头」——或者说，洛基。</p>
+      <p>在安迪·韦尔的原著中，洛基是全书最受欢迎的角色。他是一个来自波江座 b 的蜘蛛蟹形外星人，呼吸氨气，生活在 29 个大气压的高压环境中，说着一种类似音乐旋律的语言。他的善良是朴素的——「你朋友？我朋友！」——但正是这种不分种族、不分星球、不分生理结构的无条件友好，让全书的科学硬核拥有了一颗温暖的心脏。</p>
+      <p>电影改编面临的核心挑战是：<strong>如何让观众相信一个人类和一个由偶师操控的多足生物之间存在真实的情感连接？</strong></p>
+      <p>答案是反潮流的——不用 CGI，用实体偶。这个选择的效果是决定性的。CGI 角色可以完美无瑕，但完美本身有时是一种距离感。实体偶带有一种物理性的存在感：它的每一个动作都不是算法的推测，而是人的手的延伸。当洛基隔着气压舱的观察窗望向格雷斯时，观众看到的不是一个被渲染出来的形象，而是一个被操控出来的存在——这种「被操控」反而赋予了它一种 CGI 难以复制的物质性重量。</p>
+    </div>
+    <div class="blockquote">
+      <div class="text">「让观众着迷的不仅是视觉和对高斯林表演的敬意，还有它从致敬 E.T.、《领航员》等经典的场景中注入的那份童心般的惊叹。」</div>
+      <div class="source">—— 兰迪·迈尔斯，The Mercury News　★★★½</div>
+    </div>
+    <div class="prose">
+      <p>迈尔斯提到的 E.T. 是一个恰切的参照。斯皮尔伯格 1982 年的《E.T.外星人》建立了外星人友谊电影的基本语法：孩子般的好奇心、跨越物种的情感连接、以及最终的离别伤感。《挽救计划》的格雷斯与洛基之间的关系——两个被各自的任务抛弃的孤独者，在 12 光年外的星系中找到了彼此——正是这个语法的延续。但有一个关键的不同：E.T. 是被孩子发现的，而洛基是被一个成年人发现的。格雷斯的科学训练让他用数学常数和元素周期表与洛基建立初步信任，而非儿童式的直觉同情。</p>
+      <p>这种「成年人的友谊」的建构方式，与《降临》（Arrival, 2016）中语言学家路易斯·班克斯与七肢桶外星人的沟通有更深的亲缘关系——两者都不是通过武力或技术优势来建立联系，而是通过<strong>翻译</strong>。格雷斯编写了一个翻译程序来理解洛基的音乐语言，正如班克斯用非线性文字来理解七肢桶的环形语言。两部电影共享一个信念：沟通本身就是一种英雄行为。</p>
+      <p>但《挽救计划》比《降临》更乐观。《降临》中的翻译最终揭示了一个关于时间的悲剧性真相——班克斯预见了自己的丧女之痛，却选择了接受。而在《挽救计划》中，格雷斯与洛基的沟通最终带来的是<strong>救赎</strong>——不是一个人的救赎，而是两个文明的。这种乐观主义在 2026 年的好莱坞几乎是异类——在漫威宇宙的英雄们忙于内战和多元宇宙混乱的时代，一部电影相信「两个不同物种可以通过科学合作来拯救各自的太阳」，这本身就是一种立场。</p>
+      <p>USA Today 的特鲁伊特将本片比作「斯皮尔伯格和卢卡斯当年会拍的那种电影」——这个类比是准确的，但需要一个限定：它不是对 1980 年代的怀旧复制，而是对那个时代<strong>「科学可以解决问题」的信念</strong>的重新激活。在我们这个后疫情、后气候焦虑的时代，这种信念已经足够稀有了。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ V 影评之二 ═══ -->
+  <div class="section" id="sec-essay2">
+    <div class="section-label">V — ESSAY II</div>
+    <div class="section-title">伟大的拼贴术</div>
+    <div class="section-subtitle">Cinematic Recycling or Deliberate Homage?</div>
+    <div class="prose">
+      <p>《环球邮报》的巴里·赫兹给出了本片最尖锐的批评：</p>
+    </div>
+    <div class="key-claim">
+      <div class="text">「在几乎每一个转折处，影片都试图说服你它是开创性的。但实际上，它是一个宏大的电影回收行为——将熟悉的碎片融合在一起，决心取悦观众和温暖人心。」</div>
+      <div class="source">—— 巴里·赫兹，《环球邮报》</div>
+    </div>
+    <div class="prose">
+      <p>赫兹的批评不是无的放矢。如果你列举《挽救计划》中可见的前作痕迹，列表会很长：《2001：太空漫游》的飞船走廊美学、《E.T.》的跨物种友谊、《火星救援》的科学解题、《降临》的翻译主题、《星际穿越》的星际尺度、《异形》的幽闭恐惧。几乎每一个场景都能找到一个——或多个——可辨认的来源。</p>
+      <p>但《每日电讯报》的罗比·科林给出了截然不同的评价：</p>
+    </div>
+    <div class="blockquote">
+      <div class="text">「它把别人的精华混剪带编得如此出彩——对那些经典为何奏效的理解如此透彻——让人很难不被席卷。」</div>
+      <div class="source">—— 罗比·科林，《每日电讯报》</div>
+    </div>
+    <div class="prose">
+      <p>赫兹和科林描述的是同一个现象，但给出了相反的判断。谁是对的？</p>
+      <p>这个分歧实际上指向了一个更根本的美学问题：<strong>在类型片的成熟期，原创性到底意味着什么？</strong>科幻电影已经存在了上百年。太空旅行、外星接触、星际救援——每一个子类型都已经积累了大量经典文本。在这样的语境中，一个创作者能否在「从未有人做过」和「做得比所有人都好」之间做出有意义的选择？</p>
+      <p>罗德与米勒的选择是后者。他们的「拼贴」不是偷懒，而是一种自觉的方法论。从《乐高大电影》开始，他们就在做同一件事：将已有的文化碎片重新组合，赋予它们新的情感意义。《乐高大电影》把玩具广告变成了关于创造力的哲学寓言；《蜘蛛侠：平行宇宙》把漫画视觉搬进了 3D 动画——两者都是「拼贴」的典范，但没有人会说它们缺乏原创性。</p>
+      <p>《挽救计划》的拼贴遵循同样的逻辑。它不是对经典的被动重复，而是一种<strong>主动的重新激活</strong>——让 E.T. 的温暖、《2001》的崇高、《火星救援》的科学乐观主义在一个新的故事框架中重新生长。当《洛杉矶时报》的艾米·尼科尔森说「库布里克的《2001》启发了 iPad，而罗德与米勒想启发一个更好的我们」时，她精准地捕捉到了这种拼贴的野心——它不只是在重复过去，而是在用过去的语法写出一句新的话。</p>
+    </div>
+    <div class="blockquote">
+      <div class="text">「库布里克的冷峻《2001》启发了 iPad，而罗德与米勒想启发一个更好的我们。」</div>
+      <div class="source">—— 艾米·尼科尔森，《洛杉矶时报》</div>
+    </div>
+    <div class="prose">
+      <p>当然，拼贴也有它的代价。当每一个场景都在向某个前作致敬时，影片自身的「声音」就可能被稀释。彼得·布拉德肖在《卫报》的评价是中肯的：「影片有沉闷的时刻和一种小狗般的傻气。」——这可能就是拼贴的副产品：当你试图同时容纳太多来源时，影片的基调就难以保持稳定。它可以在「硬核科学解题」和「温暖的跨物种友谊」之间自如切换，但在两者之间的过渡段落，节奏偶尔会松散。</p>
+      <p>但这也许是一个值得付出的代价。<strong>如果拼贴的替代方案是「原创但空洞」，那么「拼贴但有灵魂」显然更可取。</strong>赫兹说影片「决心取悦观众和温暖人心」——这句话本意是批评，但如果把它当作赞美呢？在一个充满反讽、解构和自我厌恶的时代，一部电影「决心温暖人心」难道不是一种勇气？</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VI 影评之三 ═══ -->
+  <div class="section" id="sec-essay3">
+    <div class="section-label">VI — ESSAY III</div>
+    <div class="section-title">不回家的英雄</div>
+    <div class="section-subtitle">From Odysseus to Ryland Grace</div>
+    <div class="prose">
+      <p>本片最反好莱坞的选择不在它的视觉策略，而在它的结局。莱兰·格雷斯——在经历了失忆、孤独、跨星际旅行、与洛基的共同冒险之后——选择不回地球。他留在洛基的星球上，成为波江人文明的科学顾问。地球的危机由一艘无人探测器带回的解决方案化解。格雷斯活着，但他再也不会回家。</p>
+      <p>这个结局让本片与我们的创刊号形成了直接的对话。在诺兰的《奥德赛》中，奥德修斯历经十年漂泊，最终回到了伊萨卡。那是一个关于<strong>归乡</strong>的故事——回家是英雄旅程的终点，也是意义本身的来源。荷马的史诗之所以流传三千年，部分原因就在于「回家」这个母题的普世性：每个人都在寻找自己的伊萨卡。</p>
+      <p>但格雷斯的故事提出了一个不同的问题：<strong>如果你在旅途中找到了第二个家呢？</strong></p>
+      <p>这不是一个关于背叛或放弃的选择。格雷斯不是因为不爱地球而不回去——他思念人类的世界，思念他教过的学生。他选择留下，是因为洛基的文明需要他，而他已经找到了与洛基共处的方式——一种比他在地球上任何人际关系都更纯粹的友谊。在地球上，他是一个被学术界嘲笑的失败者；在波江星，他是一位受人尊敬的老师。他在这里不是「失败了然后逃跑」——他是在<strong>选择成为一个更好的自己</strong>。</p>
+      <p>The American Prospect 的瑞安·库珀称影片呈现了「对英雄主义令人震惊地真实的刻画」——这个评价的准确含义在于：格雷斯的英雄主义不是通过战斗或牺牲来证明的，而是通过<strong>选择</strong>来证明的。他选择了留在不熟悉的世界，学习一种不熟悉的语言，教授他所有的知识给一群完全不同的生命。这比回到一个已经熟悉的世界困难得多。</p>
+    </div>
+    <div class="key-claim">
+      <div class="text">当英雄不再被定义为「回家的人」，而是「有能力在陌生的地方扎根的人」——英雄叙事就从荷马的模式中被解放出来了。</div>
+      <div class="source">—— 场刊评论</div>
+    </div>
+    <div class="prose">
+      <p>这种解放有一个令人意外的参照系：丹尼斯·维伦纽瓦的《沙丘》。保罗·厄崔迪同样不「回家」——他从卡拉丹被流放到厄拉科斯，最终成为了弗雷曼人的弥赛亚。但保罗的选择是悲剧性的——他预见到了自己将引发的圣战，却无法阻止。格雷斯的「不回家」是它的镜像：不是命运强迫的流亡，而是<strong>自由意志选择留下的归属</strong>。</p>
+      <p>在一个全球移民、流离失所和文化杂交的时代，「家」的定义本身已经发生了变化。家不再只是你出生的地方，也可以是你选择留下的地方。奥德修斯回到了伊萨卡——但如果他选择留在卡吕普索的岛上，不是因为被囚禁，而是因为他在那里发现了比伊萨卡更真实的自己呢？那将是一个完全不同的故事。而《挽救计划》正是那个故事。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VII 技术分析 ═══ -->
+  <div class="section" id="sec-tech">
+    <div class="section-label">VII — CRAFTSMANSHIP</div>
+    <div class="section-title">技术细部分析</div>
+    <div class="section-subtitle">Fraser's Lens &amp; the Puppeteers of Rocky</div>
+    <div class="prose">
+      <p><strong>弗雷泽的镜头：从沙丘到星际</strong></p>
+      <p>格雷格·弗雷泽是当代最重要的摄影师之一。他的谱系横跨了丹尼斯·维伦纽瓦的《沙丘》系列（2021/2024）和马特·里夫斯的《新蝙蝠侠》（2022）——前者以沙漠的矿物色调和巨型建筑的压迫感著称，后者以雨夜的霓虹 noir 风格重新定义了哥谭。在《挽救计划》中，弗雷泽面对的是第三种挑战：如何在太空中创造亲密感。</p>
+      <p>他的方案是<strong>大画幅的物质密度</strong>。Arri Alexa 65 摄影机提供了 6.5K（20MP）的分辨率——远超普通数字摄影机。配合旋转 90° 的变形宽银幕镜头，弗雷泽实现了真正的 IMAX 1.43:1 画幅，而非通过裁切。这意味着画面的垂直空间被完整利用——在飞船内部场景中，那些垂直延伸的管道和走廊获得了近乎物理性的纵深。常规放映的 2:1（Univisium）画幅则通过裁切顶部和底部来适配。</p>
+      <p>这种技术选择与影片的叙事策略形成了有趣的对比。诺兰在《奥德赛》中用 IMAX 70mm 胶片追求的是<strong>奇观的物理性</strong>——风暴和冥界需要让观众感受到物理压迫。弗雷泽用 Alexa 65 追求的是<strong>空间的物质性</strong>——飞船不只是一个叙事容器，它是一个有重量、有温度、有质感的人造世界。当格雷斯独自穿过空旷的走廊时，观众能感受到金属墙壁的冷度和空气循环系统的低鸣。</p>
+      <p><strong>洛基的偶师：数字时代的逆向选择</strong></p>
+      <p>影片最引人注目的技术成就不是摄影，而是洛基。詹姆斯·奥尔蒂斯不仅饰演洛基——他「是」洛基。他带领的五人偶师团队「Rockyteers」用实体偶来实现这个外星角色的每一个动作、每一个姿态、每一次「注视」。</p>
+      <p>这个选择的代价是巨大的。CGI 可以在一夜之间完成数千帧的渲染调整；实体偶的每一次表演都需要五个人精准协调，在拍摄中实时完成。但回报也是巨大的：《旧金山纪事报》的约翰逊盛赞了「出色的生物设计与偶戏」——他看到的不是一个被算法生成出来的角色，而是一个被人的双手赋予生命的存在。</p>
+      <p>这种逆向选择在当代科幻制作中是罕见的。当《阿凡达：水之道》把表演捕捉技术推向新高度时，《挽救计划》走了一条完全不同的路。它让人想起吉姆·亨森的布偶传统——只不过这一次，偶戏不是喜剧的载体，而是一颗异星友谊的核心。</p>
+      <p><strong>彭伯顿的配乐：从平行宇宙到星际空间</strong></p>
+      <p>丹尼尔·彭伯顿此前以《蜘蛛侠：平行宇宙》系列的配乐闻名——那种融合嘻哈节拍、合成器和管弦乐的风格几乎成了「迈尔斯·墨拉莱斯」角色的声音签名。在《挽救计划》中，他做了一次转向：音乐从都市动画的节奏感迁移到了太空科幻的广袤感。</p>
+      <p>但彭伯顿没有走汉斯·季默式的合成器轰鸣路线。他的配乐保留了罗德与米勒作品一贯的<strong>情感温度</strong>——当格雷斯和洛基隔着气压窗第一次「对话」时，音乐不是宏大的太空主题，而是一段温暖的、几乎是室内乐尺度的旋律。这种处理与影片整体的美学策略一致：在星际尺度中讲述一个亲密的故事。</p>
+      <p><strong>IMAX：从奇观到空间</strong></p>
+      <p>与诺兰《奥德赛》将 IMAX 画幅用于风暴和冥界的奇观性展开不同，本片的 IMAX 画幅主要用于<strong>空间叙事</strong>——飞船内部的垂直结构、太空中的尺度对比。这反映了两种不同的 IMAX 哲学：诺兰用画幅创造敬畏，弗雷泽用画幅创造沉浸。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VIII 观影指南 ═══ -->
+  <div class="section" id="sec-guide">
+    <div class="section-label">VIII — VIEWING GUIDE</div>
+    <div class="section-title">观影指南</div>
+    <div class="section-subtitle">Format Rankings &amp; Box Office Milestones</div>
+    <div class="format-item"><span class="rank">01</span><span class="name">IMAX 1.43:1（70mm 胶片或激光）</span><span class="note">终极体验　完整画幅</span></div>
+    <div class="format-item"><span class="rank">02</span><span class="name">IMAX 数字（1.90:1）</span><span class="note">推荐　大部分扩展画幅</span></div>
+    <div class="format-item"><span class="rank">03</span><span class="name">杜比影院 / PLF</span><span class="note">视觉与声音俱佳</span></div>
+    <div class="format-item"><span class="rank">04</span><span class="name">普通数字（2:1 Univisium）</span><span class="note">可用　裁切版</span></div>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:8px">票房里程碑</div>
+    <table class="specs">
+      <tr><td>北美开画</td><td>$8060 万（Amazon MGM Studios 史上最大开画）</td></tr>
+      <tr><td>全球开画</td><td>$1.41 亿</td></tr>
+      <tr><td>次周末</td><td>$5410 万（-32.8%，守住冠军）</td></tr>
+      <tr><td>全球总票房</td><td><strong>$6.843 亿</strong>（截至 2026.07.29，2026 年第七）</td></tr>
+      <tr><td>北美总票房</td><td>$3.441 亿</td></tr>
+      <tr><td>海外总票房</td><td>$3.402 亿</td></tr>
+    </table>
+    <div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.75">
+      影片是 Amazon MGM Studios 迄今最成功的院线发行。开画超出业内预期（原估 $4500-6500 万），成为 2026 年春季档最大赢家。在日本成为 2026 年票房最高的外语片。
+    </div>
+  </div>
+
+  <!-- ═══ 二维码 ═══ -->
+  <div class="qr-section">
+    <img src="assets/qr.png" alt="扫码访问场刊">
+    <div class="label">扫码查看场刊全文</div>
+    <div class="url">ren1003497048-del.github.io/changkan/003.html</div>
+  </div>
+
+  <!-- ═══ 来源索引 ═══ -->
+  <div class="source-index">
+    <p><strong>影评来源：</strong>《好莱坞报道》/ 《旧金山纪事报》/ USA Today / 《每日电讯报》/ 《洛杉矶时报》/ The Mercury News / The American Prospect / 《环球邮报》/ 《卫报》/ BBC</p>
+    <p><strong>数据来源：</strong>Wikipedia / Rotten Tomatoes / Metacritic / Box Office Mojo，截至 2026.07.29</p>
+    <p><strong>原著参考：</strong>Andy Weir, <i class="pub-en">Project Hail Mary</i>（2021）</p>
+    <p><strong>跨期参考：</strong>场刊创刊号《奥德赛》（归乡主题）/ 第二期《蜘蛛侠》（RT-MC 落差对比）</p>
+  </div>
+
+  <!-- ═══ 封底 ═══ -->
+  <div class="colophon">
+    <div class="mast">场　刊</div>
+    <div style="font-family:'Playfair Display',serif;font-size:11px;color:var(--bronze);letter-spacing:0.2em;margin-bottom:8px;font-style:italic">THE PROGRAMME</div>
+    <div class="info">
+      观影之前，先翻场刊<br><br>
+      第〇〇三期　挽救计划<br>
+      2026 年 8 月 12 日<br><br>
+      新片信息的深度速览 · 权威影评的汇编评注<br><br>
+      © 2026 The Programme · 场刊<br>
+      ren1003497048-del.github.io/changkan
+    </div>
+  </div>
+
+</div>
+
+<script>
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+</script>
+
+</body>
+</html>
