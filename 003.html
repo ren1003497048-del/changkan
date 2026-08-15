@@ -2,8 +2,14 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>场刊 · 挽救计划 · 第三期</title>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="场刊 The Programme">
+<meta property="og:title" content="场刊 · 第三期 · 挽救计划">
+<meta property="og:description" content="用手做出来的科幻电影——实体偶、拼贴美学与不回家的英雄，罗德与米勒的真人导演回归。">
+<meta property="og:image" content="https://ren1003497048-del.github.io/changkan/assets/cover-banner.jpg">
+<meta property="og:url" content="https://ren1003497048-del.github.io/changkan/003.html">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -54,7 +60,7 @@ body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--ink);lin
 .key-claim{margin:22px 0;padding:18px;border-top:2px solid var(--bronze);border-bottom:2px solid var(--bronze);background:rgba(139,105,20,0.02)}
 .key-claim .text{font-size:17px;font-weight:700;line-height:1.6}
 .key-claim .source{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
-.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:20px 0}
+.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:20px 0}
 .divider{height:1px;background:var(--rule);margin:28px 0}
 .scores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
 .score-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px}
@@ -104,7 +110,7 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
   <a class="drawer-item" onclick="closeDrawer()" href="#sec-reception"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">II</span>口碑速览<div class="sub">评分汇总与评语</div></a>
   <a class="drawer-item" onclick="closeDrawer()" href="#sec-editorial"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">III</span>一个失败的老师救了世界<div class="sub">编者前言</div></a>
   <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay1"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">IV</span>洛基不是特效<div class="sub">实体偶在数字时代的意义</div></a>
-  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay2"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">V</span>熟悉的温度<div class="sub">为什么"拼贴"在这部电影里成立</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay2"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">V</span>熟悉的温度<div class="sub">为什么「拼贴」在这部电影里成立</div></a>
   <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay3"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VI</span>他选择留下<div class="sub">格雷斯的英雄主义</div></a>
   <a class="drawer-item" onclick="closeDrawer()" href="#sec-tech"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VII</span>技术细部分析<div class="sub">弗雷泽的镜头与彭伯顿的旋律</div></a>
   <a class="drawer-item" onclick="closeDrawer()" href="#sec-guide"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VIII</span>观影指南<div class="sub">格式推荐与票房里程碑</div></a>
@@ -114,15 +120,8 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
 
   <!-- ═══ 封面 ═══ -->
   <div class="cover">
-    <div class="cover-img" style="background:linear-gradient(135deg,var(--space-deep),var(--space-blue));display:flex;align-items:center;justify-content:center">
-      <div style="text-align:center">
-        <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#e8d8a0;letter-spacing:0.05em;opacity:0.9">PROJECT</div>
-        <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#e8d8a0;letter-spacing:0.05em;opacity:0.9">HAIL MARY</div>
-        <div style="font-size:22px;font-weight:600;color:var(--teal);letter-spacing:0.2em;margin-top:12px">挽　救　计　划</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:0.3em;margin-top:16px">★ ★ ★ ★ ☆</div>
-      </div>
-    </div>
-    <div class="cover-overlay" style="background:linear-gradient(transparent,rgba(10,14,26,0.95))">
+    <img class="cover-img" src="assets/cover-banner.jpg" alt="场刊自制排版封面：PROJECT HAIL MARY 挽救计划">
+    <div class="cover-overlay" style="background:linear-gradient(transparent,rgba(10,14,26,0.55))">
       <div class="cover-en">PROJECT HAIL MARY</div>
       <div class="cover-zh">挽　救　计　划</div>
     </div>
@@ -213,7 +212,7 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
       <p>这是《挽救计划》的起点，也是它与几乎所有同类科幻片的根本不同：<strong>主角不是被选中的人，而是被推上船的懦夫。</strong>安迪·韦尔 2021 年的原著之所以畅销，不是因为它发明了什么——星际旅行、失忆叙事、科学解题都已被前人用过无数次——而是因为它把一个普通人放进了英雄的位置，然后诚实地描写他的恐惧、逃避，以及最终笨拙的勇敢。</p>
       <p>罗德与米勒的电影版忠实地继承了这一点。瑞恩·高斯林饰演的格雷斯没有马克·沃特尼（《火星救援》）式的自信和幽默，也没有库珀（《星际穿越》）式的深沉使命感。他是一个刚刚失去记忆、在空旷飞船中醒来不知道自己是谁的人——他甚至不知道自己是怎么来到这里的。高斯林把这种困惑演得不悲壮，只有茫然的、日常尺度的不安。</p>
       <p>然后洛基出现了。一个来自波江座 b 的蜘蛛蟹形外星人，呼吸氨气，生活在一个 29 大气压的高压舱里，说着一种类似音乐的语言。格雷斯给他取了这个名字——因为他「长得像一块石头」。他们在 12 光年外的星系中相遇，各自被各自的任务抛弃，各自失去了所有同伴。他们用数学建立信任，用翻译程序慢慢学会对话，用科学合作拯救了各自的太阳。</p>
-      <p>这是 2026 年最温暖的大制作电影之一。RT 95%、MC 77、CinemaScore A——三项评分高度趋同，影评人和普通观众罕见地达成了一致。本刊的判断是：<strong>这部影片的成功不在于它说了什么新东西，而在于它把那些我们都知道是好东西的东西——科学合作、跨物种友谊、一个失败者找到自己的位置——用一种让人愿意相信的方式重新讲了一遍。</strong>在一个越来越犬儒的时代，这种"让人愿意相信"本身就是成就。</p>
+      <p>这是 2026 年最温暖的大制作电影之一。RT 95%、MC 77、CinemaScore A——三项评分高度趋同，影评人和普通观众罕见地达成了一致。本刊的判断是：<strong>这部影片的成功不在于它说了什么新东西，而在于它把那些我们都知道是好东西的东西——科学合作、跨物种友谊、一个失败者找到自己的位置——用一种让人愿意相信的方式重新讲了一遍。</strong>在一个越来越犬儒的时代，这种「让人愿意相信」本身就是成就。</p>
     </div>
   </div>
   <div class="divider"></div>
@@ -241,8 +240,8 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
     <div class="section-title">熟悉的温度</div>
     <div class="section-subtitle">Why Familiarity Works Here</div>
     <div class="prose">
-      <p>巴里·赫兹在《环球邮报》写了本片最不留情的评价：影片是「一个宏大的电影回收行为——将熟悉的碎片融合在一起，决心取悦观众和温暖人心」。他的话没有说错。《挽救计划》确实是一部你能不断在其中认出其他电影影子的作品——E.T. 的友谊、《2001》的飞船美学、《火星救援》的科学解题、《降临》的翻译主题、斯皮尔伯格式的家庭冒险基调。如果你要对它做一份「出处清单」，这份清单会非常长。</p>
-      <p>但这份清单能说明什么？</p>
+      <p>巴里·赫兹在《环球邮报》写了本片最不留情的评价：影片是「一个宏大的电影回收行为——将熟悉的碎片融合在一起，决心取悦观众和温暖人心」。他的话没有说错。《挽救计划》确实是一部你能不断在其中认出其他电影影子的作品——E.T. 的友谊、《2001》的飞船美学、《火星救援》的科学解题、《降临》的翻译主题、斯皮尔伯格式的家庭冒险基调。这些渊源层层叠叠，几乎遍布每一个场景——认得出处，本身就成了观看这部电影的一部分经验。</p>
+      <p>但出处密集并不自动构成判词。是挪用的惰性，还是理解的深度，要看它把引用变成了什么。</p>
       <p>科幻电影已经存在了一百多年。太空旅行、外星接触、科学拯救人类——每一个母题都已被反复讲述。在这个前提下，真正值得追问的不是「这个故事是否前所未有」，而是<strong>「它是否让我重新感受到了那些我以为已经麻木的东西」</strong>。《挽救计划》做到了这一点。它让一个看了一辈子科幻片的观众重新为两个角色隔着气压舱玻璃的第一次对话而紧张——不是因为这一幕在形式上有任何创新，而是因为它的节奏、细节和情感投入让它重新生效了。</p>
       <p>这就是罗比·科林在《每日电讯报》说的意思：它把别人的精华「编得如此出彩——对那些经典为何奏效的理解如此透彻」。关键不在引用，在理解。一个导演可以拍出飞船内部致敬《2001》的走廊——但如果他不理解库布里克为什么让走廊那么长、那么空、那么令人不安，致敬就只是复制。罗德与米勒理解。他们知道 E.T. 为什么感人——不是因为外星人可爱，而是因为一个孤独的孩子找到了不需要语言就能沟通的伙伴。他们把这个理解搬进了一个成年人的故事：格雷斯不是孩子，但他的孤独和孩子一样原始。</p>
       <p>这也许解释了为什么《环球邮报》的批评虽然准确，却缺少杀伤力。赫兹说影片「决心取悦观众和温暖人心」——他的语气暗示这是一种降格。但在 2026 年，<strong>真诚地温暖人心已经不再是默认状态了</strong>。大部分商业大片要么用反讽来回避情感（漫威的自我解构），要么用感官过载来替代情感（变形金刚式的噪音）。一部电影「决心」温暖人心——而且做到了——这本身就需要某种不随大流的信念。</p>
@@ -315,7 +314,7 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
 
   <!-- ═══ 二维码 ═══ -->
   <div class="qr-section">
-    <img src="assets/qr.png" alt="扫码访问场刊">
+    <img src="assets/qr-003.png" alt="扫码访问场刊">
     <div class="label">扫码查看场刊全文</div>
     <div class="url">ren1003497048-del.github.io/changkan/003.html</div>
   </div>
@@ -325,6 +324,7 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
     <p><strong>影评来源：</strong>《好莱坞报道》/ 《旧金山纪事报》/ USA Today / 《每日电讯报》/ 《洛杉矶时报》/ The Mercury News / The American Prospect / 《环球邮报》/ 《卫报》/ BBC</p>
     <p><strong>数据来源：</strong>Wikipedia / Rotten Tomatoes / Metacritic / Box Office Mojo，截至 2026.07.29</p>
     <p><strong>原著参考：</strong>Andy Weir, <i class="pub-en">Project Hail Mary</i>（2021）</p>
+    <p><strong>封面与宣传图：</strong>场刊自制排版封面（assets/cover-art.jpg，官方海报待补换）· 竖版宣传图 assets/promo.jpg</p>
   </div>
 
   <!-- ═══ 封底 ═══ -->
@@ -337,7 +337,8 @@ i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
       2026 年 8 月 12 日<br><br>
       新片信息的深度速览 · 权威影评的汇编评注<br><br>
       © 2026 The Programme · 场刊<br>
-      ren1003497048-del.github.io/changkan
+      ren1003497048-del.github.io/changkan<br>
+      <a href="archive.html" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">往期总目 · Archive</a>
     </div>
   </div>
 

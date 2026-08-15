@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>场刊 · 往期总目 · The Programme Archive</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="场刊 The Programme">
+<meta property="og:title" content="场刊 · 往期总目">
+<meta property="og:description" content="新片信息的深度速览 · 权威影评的汇编评注——三期场刊一键直达。">
+<meta property="og:image" content="https://ren1003497048-del.github.io/changkan/assets/cover-art.jpg">
+<meta property="og:url" content="https://ren1003497048-del.github.io/changkan/archive.html">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;--ink-soft:#3a3a36;--bronze:#8b6914;--bronze-deep:#6b5010;
+  --crimson:#8b2020;--muted:#6b665c;--faint:#9c968a;--rule:#e0dbcf;
+  --bg:#faf8f3;--card:#ffffff;--highlight:#fdf6ec;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+/* 刊头 */
+.masthead{padding:56px 0 30px;text-align:center}
+.mast-en{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--bronze);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:10px}
+.mast-zh{font-size:38px;font-weight:700;letter-spacing:0.3em;text-indent:0.3em}
+.mast-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--bronze);letter-spacing:0.08em;margin-top:8px}
+.slogan{font-size:14px;font-weight:600;color:var(--bronze-deep);margin-top:18px}
+.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:22px auto;max-width:200px}
+.intro{font-size:14px;color:var(--ink-soft);max-width:32em;margin:0 auto;text-align:center}
+/* 期目卡片 */
+.issues{margin-top:34px}
+.issue-card{display:flex;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:20px 20px 18px;margin-bottom:16px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;position:relative;overflow:hidden}
+.issue-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(26,26,24,.10)}
+.issue-no{flex-shrink:0;width:64px;text-align:center;border-right:1px solid var(--rule);padding-right:16px;margin-right:18px}
+.issue-no .num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--bronze);line-height:1.2}
+.issue-no .lab{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--faint);letter-spacing:0.2em;margin-top:2px}
+.issue-body{flex:1;min-width:0}
+.issue-en{font-family:'Playfair Display',serif;font-size:12px;color:var(--bronze);letter-spacing:0.12em;text-transform:uppercase}
+.issue-zh{font-size:20px;font-weight:700;line-height:1.5;margin:2px 0 4px}
+.issue-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);letter-spacing:0.1em;margin-bottom:8px}
+.issue-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.8}
+.issue-tags{margin-top:10px}
+.tag{display:inline-block;font-size:11px;color:var(--bronze-deep);background:rgba(139,105,20,0.07);border:1px solid rgba(139,105,20,0.22);border-radius:20px;padding:1px 10px;margin-right:6px;line-height:1.9}
+.issue-link{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze-deep);letter-spacing:0.12em;margin-top:12px;display:inline-block}
+.issue-card:hover .issue-link{text-decoration:underline}
+.issue-card .arrow{position:absolute;right:18px;top:22px;color:var(--bronze);font-size:16px;opacity:.55}
+/* 筹备中 */
+.next-card{display:flex;border:1px dashed var(--rule);border-radius:12px;padding:18px 20px;color:var(--faint);background:transparent}
+.next-card .issue-no .num{color:var(--rule)}
+.next-card .issue-zh{font-size:16px;color:var(--muted);font-weight:600}
+.next-card .issue-desc{color:var(--faint);font-size:12.5px}
+/* 封底 */
+.colophon{text-align:center;margin-top:40px;padding-top:22px;border-top:1px solid var(--rule)}
+.colophon .mast{font-size:16px;font-weight:700;letter-spacing:0.15em;margin-bottom:4px}
+.colophon .info{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);line-height:1.9}
+.colophon .info a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+@media (max-width:420px){
+  .mast-zh{font-size:30px}
+  .issue-no{width:52px;padding-right:12px;margin-right:12px}
+  .issue-no .num{font-size:28px}
+  .issue-zh{font-size:18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="mast-en">The Programme · Archive</div>
+    <div class="mast-zh">场　刊</div>
+    <div class="mast-sub">New Films, Considered</div>
+    <div class="slogan">观影之前，先翻场刊</div>
+    <div class="meander"></div>
+    <p class="intro">每期一部新片，汇编权威影评、制作信息与深度评注。以下为已出版各期，点击进入全文。</p>
+  </header>
+
+  <main class="issues">
+
+    <a class="issue-card" href="index.html">
+      <div class="issue-no"><div class="num">001</div><div class="lab">ISSUE</div></div>
+      <div class="issue-body">
+        <div class="issue-en">The Odyssey</div>
+        <div class="issue-zh">诺兰《奥德赛》 · 创刊号</div>
+        <div class="issue-date">2026.08.11 · v3.2 · 含号外</div>
+        <div class="issue-desc">诺兰的 IMAX 史诗——归乡、待客之道与去神话化；号外「当吟游诗人遇上电影导演」追溯东方主义争议与吟游诗人的矛盾性。</div>
+        <div class="issue-tags"><span class="tag">归乡</span><span class="tag">待客之道</span><span class="tag">去神话化</span><span class="tag">号外</span></div>
+        <span class="issue-link">阅读本期 →</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="issue-card" href="002.html">
+      <div class="issue-no"><div class="num">002</div><div class="lab">ISSUE</div></div>
+      <div class="issue-body">
+        <div class="issue-en">Spider-Man: Brand New Day</div>
+        <div class="issue-zh">蜘蛛侠：崭新之日</div>
+        <div class="issue-date">2026.08.12 · v1.2</div>
+        <div class="issue-desc">RT 90% 与 MC 66 的裂缝之间，一部关于失去的超英电影——被世界遗忘的英雄，与能力的肉身回归。克雷顿接手荷兰弟三部曲的新篇章。</div>
+        <div class="issue-tags"><span class="tag">RT-MC 落差</span><span class="tag">肉身回归</span><span class="tag">失去</span></div>
+        <span class="issue-link">阅读本期 →</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="issue-card" href="003.html">
+      <div class="issue-no"><div class="num">003</div><div class="lab">ISSUE</div></div>
+      <div class="issue-body">
+        <div class="issue-en">Project Hail Mary</div>
+        <div class="issue-zh">挽救计划</div>
+        <div class="issue-date">2026.08.12 · v3.1</div>
+        <div class="issue-desc">用手做出来的科幻电影——实体偶洛基、拼贴美学的争论，与一个选择不回家的英雄。罗德与米勒在真人导演领域的重要回归。</div>
+        <div class="issue-tags"><span class="tag">实体偶</span><span class="tag">拼贴美学</span><span class="tag">科学乐观主义</span></div>
+        <span class="issue-link">阅读本期 →</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <div class="next-card">
+      <div class="issue-no"><div class="num">004</div><div class="lab">NEXT</div></div>
+      <div class="issue-body">
+        <div class="issue-zh">第〇〇四期 · 筹备中</div>
+        <div class="issue-desc">候选方向：维伦纽瓦《沙丘 3：美阿德》等——与创刊号构成「新史诗」对读。出版后本页即时更新。</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="colophon">
+    <div class="mast">场　刊</div>
+    <div class="info">
+      新片信息的深度速览 · 权威影评的汇编评注<br>
+      ren1003497048-del.github.io/changkan<br>
+      <a href="index.html">回到创刊号</a> · <a href="002.html">第二期</a> · <a href="003.html">第三期</a><br>
+      © 2026 The Programme
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
