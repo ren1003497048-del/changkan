@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>场刊学术特刊 · 滨口龙介 · 七个美学问题</title>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="场刊 The Programme">
+<meta property="og:title" content="场刊学术特刊 · 滨口龙介：七个美学问题">
+<meta property="og:description" content="声音、画框、翻译、偶然、表演、实在、现场性——以问题而非作品组织的滨口龙介电影学研究。长篇译丛＋年谱＋总书目。">
+<meta property="og:image" content="https://ren1003497048-del.github.io/changkan/assets/cover-banner-sp.jpg">
+<meta property="og:url" content="https://ren1003497048-del.github.io/changkan/sp-hamaguchi.html">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;--ink-soft:#3a3a36;--bronze:#8b6914;--bronze-deep:#6b5010;
+  --crimson:#8b2020;--indigo:#2c4163;--muted:#6b665c;--faint:#9c968a;
+  --rule:#e0dbcf;--rule-fine:#ede8de;--bg:#faf8f3;--card:#ffffff;--highlight:#fdf6ec;
+  /* 学术特刊主题：纸白·墨·铜 + 靛蓝 */
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+.wrap{max-width:700px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(250,248,243,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.topbar-title{font-size:15px;font-weight:700;letter-spacing:0.1em}
+.topbar-en{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--bronze);letter-spacing:0.2em}
+.menu-btn{background:none;border:none;font-size:20px;color:var(--bronze);cursor:pointer;padding:4px 8px}
+.drawer{position:fixed;top:0;left:-280px;width:280px;height:100vh;background:var(--card);box-shadow:2px 0 20px rgba(0,0,0,0.1);z-index:200;transition:left 0.3s;overflow-y:auto;padding:20px}
+.drawer.open{left:0}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:150;display:none}
+.drawer-overlay.show{display:block}
+.drawer-title{font-size:18px;font-weight:700;margin-bottom:16px}
+.drawer-item{display:block;padding:10px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-size:14px;cursor:pointer}
+.drawer-item .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.drawer-close{position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer}
+.cover{margin:0 -22px 26px;position:relative;overflow:hidden;background:linear-gradient(160deg,#f6f1e6,#efe7d6)}
+.cover-img{width:100%;height:380px;object-fit:cover;display:block}
+.cover-overlay{position:absolute;bottom:0;left:0;right:0;padding:26px 22px 20px;background:linear-gradient(transparent,rgba(30,26,18,0.55))}
+.cover-en{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#f3ead2;letter-spacing:0.05em}
+.cover-zh{font-size:19px;font-weight:600;color:#fdf6ec;letter-spacing:0.14em;margin-top:4px}
+.cover-meta{display:flex;margin:14px 0 10px;border-top:1px solid rgba(250,248,243,0.35);border-bottom:1px solid rgba(250,248,243,0.35);padding:8px 0}
+.cover-meta-item{flex:1;text-align:center;font-size:10px;color:#e7ddc4;border-right:1px solid rgba(250,248,243,0.25)}
+.cover-meta-item:last-child{border-right:none}
+.cover-meta-item strong{display:block;font-size:12px;color:#fdf6ec;margin-top:2px}
+.sp-badge{position:absolute;top:18px;left:22px;background:var(--crimson);color:#faf8f3;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;padding:5px 14px;border-radius:100px}
+.section{margin:38px 0 18px;scroll-margin-top:56px}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--indigo);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:4px}
+.section-title{font-size:22px;font-weight:700;line-height:1.4;margin-bottom:2px}
+.section-subtitle{font-family:'Playfair Display',serif;font-size:12px;color:var(--bronze);letter-spacing:0.1em;margin-bottom:16px;font-style:italic}
+.prose{font-size:16px;line-height:1.95;color:var(--ink);text-align:justify}
+.prose p{margin-bottom:16px}
+.prose strong{font-weight:700}
+.sub-heading{font-size:18px;font-weight:700;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--indigo);color:var(--ink)}
+.chapter-quote{margin:22px 0;padding:18px 20px;background:var(--card);border-top:2px solid var(--indigo);border-bottom:2px solid var(--indigo)}
+.chapter-quote .q{font-size:15.5px;line-height:1.9;font-weight:600;color:var(--ink)}
+.chapter-quote .src{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.trans-block{margin:20px 0;padding:16px 18px;background:var(--card);border-left:3px solid var(--bronze);border-radius:0 8px 8px 0}
+.trans-orig{font-size:13.5px;line-height:1.8;color:var(--ink-soft);margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--rule)}
+.trans-zh{font-size:15px;line-height:1.9;color:var(--ink)}
+.trans-note{font-size:13.5px;color:var(--muted);line-height:1.8;margin-top:10px}
+.trans-src{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.trans-src a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:22px 0}
+.divider{height:1px;background:var(--rule);margin:30px 0}
+.specs{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.specs td{padding:5px 6px;border-bottom:1px solid var(--rule);line-height:1.6;vertical-align:top}
+.specs td:first-child{width:26%;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze)}
+.timeline{margin:10px 0}
+.tl-row{display:flex;border-bottom:1px solid var(--rule-fine);padding:8px 0}
+.tl-year{flex-shrink:0;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--indigo);padding-top:2px}
+.tl-body{flex:1;font-size:14px;color:var(--ink-soft);line-height:1.8}
+.biblio-cat{font-size:17px;font-weight:700;margin:26px 0 8px;padding-left:12px;border-left:3px solid var(--bronze)}
+.biblio-item{font-size:14px;color:var(--ink-soft);line-height:1.85;margin-bottom:10px;padding-left:14px;text-indent:-14px}
+.biblio-item a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.qr-section{text-align:center;margin:32px 0 16px;padding:24px;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+.qr-section img{width:140px;height:140px;margin-bottom:12px}
+.qr-section .label{font-size:15px;font-weight:700;margin-bottom:4px}
+.qr-section .url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bronze)}
+.colophon{text-align:center;margin:32px 0 16px;padding:24px 0;border-top:1px solid var(--rule)}
+.colophon .mast{font-size:16px;font-weight:700;letter-spacing:0.15em;margin-bottom:4px}
+.colophon .info{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);line-height:1.9}
+.colophon .info a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.source-index{font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid var(--rule);margin-top:20px;padding-top:12px}
+.source-index p{margin-bottom:4px}
+.source-index strong{color:var(--ink)}
+i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" onclick="openDrawer()">☰</button>
+  <div><div class="topbar-title">场　刊</div><div class="topbar-en">THE PROGRAMME · 学术特刊</div></div>
+  <div style="position:relative">
+    <button id="topnav-btn" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 6px" onclick="toggleTopnav(event)">SP ▾</button>
+    <div id="topnav-panel" style="display:none;position:absolute;right:0;top:100%;background:var(--card);border:1px solid var(--rule);border-radius:8px;box-shadow:0 10px 28px rgba(26,26,24,.14);min-width:200px;padding:6px 0;z-index:300">
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/">001　奥德赛</a>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/002.html">002　蜘蛛侠：崭新之日</a>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/003.html">003　挽救计划</a>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/004.html">004　突如其来</a>
+      <div style="height:1px;background:var(--rule);margin:6px 0"></div>
+      <a style="display:block;padding:8px 18px;font-size:12px;color:var(--bronze);font-weight:700;text-decoration:none" href="https://ren1003497048-del.github.io/changkan/sp-hamaguchi.html">学术特刊 · 本期</a>
+      <a style="display:block;padding:8px 18px;font-size:12px;color:var(--bronze-deep);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/archive.html">往期总目 · Archive</a>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  <div class="drawer-title">目　录</div>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-intro"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">导</span>特刊导言<div class="sub">一问定性与使用说明</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c1"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">一</span>语言的否定性<div class="sub">影像的确定与言语的含混</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c2"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">二</span>可见与不可见<div class="sub">明晰的轮廓与他者的剩余</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c3"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">三</span>翻译作为方法<div class="sub">改编本体论与多语剧场</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c4"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">四</span>偶然与时间<div class="sub">爱如灾害的存在论</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c5"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">五</span>表演作为事件<div class="sub">读本·素人·不可能性</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c6"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">六</span>影像与实在<div class="sub">巴赞的法庭与世界的摇晃</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-c7"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">七</span>现场性伦理<div class="sub">从海啸访谈到集会长镜</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-chrono"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">谱</span>导演年谱<div class="sub">1978–2026</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-biblio"><span style="font-family:'JetBrains Mono';color:var(--indigo);font-size:10px;margin-right:8px">目</span>总书目<div class="sub">带注解的研究文献</div></a>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ 封面 ═══ -->
+  <div class="cover">
+    <div class="sp-badge">SPECIAL · 学术特刊</div>
+    <img class="cover-img" src="assets/cover-banner-sp.jpg" alt="学术特刊封面：纸面、墨字与回纹">
+    <div class="cover-overlay">
+      <div class="cover-en">HAMAGUCHI RYŪSUKE</div>
+      <div class="cover-zh">滨口龙介：七个美学问题</div>
+      <div class="cover-meta">
+        <div class="cover-meta-item">体裁<strong>电影学研究特刊</strong></div>
+        <div class="cover-meta-item">方法<strong>问题·译文·评注</strong></div>
+        <div class="cover-meta-item">篇幅<strong>长文·不设上限</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 导言 ═══ -->
+  <div class="section" id="sec-intro">
+    <div class="section-label">INTRODUCTION · 导言</div>
+    <div class="section-title">把滨口龙介当作问题，而不是答案</div>
+    <div class="section-subtitle">A Question-Oriented Study</div>
+    <div class="prose">
+      <p>《场刊》第四期处理了《突如其来》这部影片；这册特刊处理的是另一个对象——<strong>滨口龙介的电影在电影本体层面提出了什么问题</strong>。两个交付物分工明确：那边是单片场刊，这边是创作整体与谱系。选材只收学术与深度批评文本（导演本人的电影分析文章、《电影手册》《视与听》《电影季刊》线索、日本独立批评志与学术著述），明确排除行业媒体与日常杂志文章。</p>
+      <p>本刊的组织方式与一般导演专号相反：<strong>以「问题」而非「作品」分章</strong>。七个问题——语言的否定性、可见与不可见、翻译、偶然与时间、表演、影像与实在、现场性——各自悬挂在滨口二十年的作品序列上，而非按片名排列。每个问题先给出编辑部的论题综述，再附一段<strong>双语精读</strong>（原文与编辑部试译并列，完整版连同其余五篇存于纸面之外的 translations 文档，共七篇）；引文全部可溯源，付不起费墙的条目如实标注。读者画像已预先设定：愿意连续深度阅读两小时以上、对「滨口为什么重要」的机制而非轶事感兴趣的人。</p>
+      <p>一点诚实声明：滨口研究在学界尚在起步期，本刊是「初探的汇编」而非定论；七篇译文的措辞以直译为先，引用请核原文。最锋利的反对意见（第六章大寺眞輔对巴赞问题的重提）被完整呈现而非回避——一部学术特刊的资格，恰恰取决于它如何处理自己最不能消化的批评。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第一章 ═══ -->
+  <div class="section" id="sec-c1">
+    <div class="section-label">CHAPTER I · 声音</div>
+    <div class="section-title">语言的否定性</div>
+    <div class="section-subtitle">The Negativity of Language vs. the Certainty of the Image</div>
+    <div class="chapter-quote">
+      <div class="q">「我想逆着影像那过度的确定性。我喜欢词语的含混……言语在『此刻映入眼帘的画面』上，一层一层地生成潜在的层次。」</div>
+      <span class="src">滨口龙介，引自《电影在哪里：独立电影的新浪潮》（转引自谷口惇〈幸福的时间的成分〉）</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：电影由「过度确定」的影像构成——摄影机拍下的东西就在那里，无法否认它在。而语言天生含混：说了什么，既不能确证为真，也不能当场证伪。一个用语言驱动叙事的电影作者，究竟在拿语言做什么？</p>
+      <p>批评志『エクリヲ』的谷口惇给出了本刊的出发点：滨口自述的「潜在的层次」，正是语言的<strong>否定性</strong>——影像自身充足（「影像中没有否定」），唯有言语能把「没有」「也许」「谎」带入画面。于是悬念不再挂在剧情钩子上，而挂在「这句话何时露馅」上；《驾驶我的车》的家福对妻子的情事「演作无知」，就是否定性在人物层面的实体化。谷口并引盐田明彦论卡萨维茨——「不是靠剧作制造悬念，而是靠场面持续中的临场感……下一瞬完全无法预知」——指出滨口的人物塑造继承的正是这条「悬念内在化」的路线（<a href="https://ecrito.fever.jp/20160119130035" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。</p>
+      <p>声音层面的对应物，是滨口在 Cineaste 访谈里的自白：「对我而言，重要的与其说是视觉，不如说是嗓音。布列松在人的嗓音里听到了巨量的信息……我自己想拥有那样的耳朵。」读本排练——排除情感地反复朗读——输出的「平板」台词，不是技巧缺陷而是<strong>声音策略</strong>：把语义从情绪里剥出来，让嗓音本身被听见。大寺眞輔进一步指出，这种平板正是《突如其来》白板讲演场不沦为说教的机关（见第六章）。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">言葉は、映像として映っているものほどハードではないというか、何を言ったからってそれは本当かどうか確認する術はないですよね。そして、嘘だったら「それがいつバレるのか」っていうサスペンスが生まれる。言葉によって「今、眼に見えている画面」に潜在的なレイヤーが出来ていく感覚があって、そういう映画を作ることなら自分でもできそうな気がした、というのが出発点だと思います。</div>
+      <div class="trans-zh">「词语不像映在画面上的影像那样硬——一个人说了什么，其实没有办法确证真假。而且，如果是谎话，就会产生『它何时会暴露』的悬念。有一种感觉：言语在『此刻映入眼帘的画面』上，一层一层地生成潜在的层次。我觉得，做这样的电影，我自己也能做到——这就是出发点。」</div>
+      <span class="trans-src">滨口龙介 · 译文见 translations/05 · <a href="https://ecrito.fever.jp/20160119130035">原文（谷口惇文内引）</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕把这段话与 04 篇的「布列松之耳」并置，声音问题的两个半边就齐了：语言负责否定性（说谎、悬念、潜在层），嗓音负责在场性（信息、质感、肉身）。滨口的电影同时押注两边——这正是他不同于「话痨电影」的地方。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第二章 ═══ -->
+  <div class="section" id="sec-c2">
+    <div class="section-label">CHAPTER II · 画框</div>
+    <div class="section-title">可见与不可见</div>
+    <div class="section-subtitle">Clarity, Frame, and the Remainder of the Other</div>
+    <div class="chapter-quote">
+      <div class="q">「背后不是看不见的，背后单纯地可见，那里没有谜。无比明晰，因而深不可测。」</div>
+      <span class="src">早川由真〈无比明晰，因而深不可测〉</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：当调度把一切拍得清清楚楚，「他者的不可测」还剩下什么位置？神秘是被制造的，还是作为明晰的剩余物自然浮现的？</p>
+      <p>早川由真论《驾驶我的车》的回答是本刊最优雅的一段电影分析：滨口的每一处设计——多语剧场的设定、妻子·音那奇异习性的清晰引入、高槻一再展示的「后背」——都在勾勒<strong>明晰的轮廓</strong>；而「不可测」恰恰是被这套明晰导出的剩余物。高槻在画面外做尽各种事、败露总在事后，但他不是谜：「他在看不见的地方做着什么——那不是谜，只是看不见而已。」美咲的雪中结论则把公式钉死：单纯可见的东西，与单纯不可见的东西，仅此而已（<a href="https://www.hayakawabooks.com/n/nbf78ae8261e9" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。这同时是对「悬念外在化」的拒绝：滨口对基亚罗斯塔米式的公路片距离「巧妙地回避」，对约翰·卡彭特式的汽车官能、对活剧式驾驶统统不感兴趣——车内的朗读、助手席的瞌睡、隧道出口的夜雨，才是调度的主战场。</p>
+      <p>与「明晰」互为表里的是滨口对画框的洁癖。他在 Cineaste 访谈里批评当代日本电影的「画面的贫困」：「被再现的虚构存在与视听元素没有对齐，画框里总有一些不对劲的东西，于是虚构变得难以令人相信。」这句话倒过来读就是他的构图伦理：<strong>画框里的每一样东西都必须可信</strong>。《突如其来》的低照度夜戏（光只出现在被看与被听确实发生的地方）、以及导演在谈话中提及的 1.5:1 画幅选择（单源信息：UDCAST 音声向导对谈与相关讲谈，官方未正式公布），都可以放进这个框架理解——一个不宽不窄、接近学院派比例的画框，既容得下双人对话的均衡，也保留着「.room」感。高槻对偷拍者的两次暴力，被早川读作对「被纳入画框的原理性暴力」的抵抗——画框本身，在他笔下第一次成了道德问题。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">雪に埋もれたかつての住み家の前で、みさきは次のように語る。音は家福のことを深く愛していたし、他の男のことも同様に必要としていた。単にそういうことだったし、そういう人間だったのではないか。そこに謎はないのだと。 […] そうではなく、単に見えるものと、見えないものがあるだけなのである。</div>
+      <div class="trans-zh">「在被积雪掩埋的旧居前，美咲这样说：音深爱着家福，也同样需要别的男人。不过就是这样的事，不过就是这样的人。那里没有谜。〔……〕不是别的——只是有可见的东西，与不可见的东西。」</div>
+      <span class="trans-src">早川由真 · 译文见 translations/06 · <a href="https://www.hayakawabooks.com/n/nbf78ae8261e9">原文</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕「单纯可见／单纯不可见」与第一章「影像的确定性」共用一块基石：巴赞式的摄影机自足性。妙处在于两位作者从同一基石推出了相反的结论——谷口担心影像太硬，早川赞美影像不撒谎。第三章将看到第三位作者（权玹旭）如何把画框的确定性变成「渗透性」问题。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第三章 ═══ -->
+  <div class="section" id="sec-c3">
+    <div class="section-label">CHAPTER III · 翻译</div>
+    <div class="section-title">翻译作为方法</div>
+    <div class="section-subtitle">Adaptation as Trānslātiō</div>
+    <div class="chapter-quote">
+      <div class="q">「Traduttore, traditore——翻译者即背叛者。如果改编是一种必然损耗原作的翻译过程，那么滨口的《驾驶我的车》就是一场铺展开来的背叛。」</div>
+      <span class="src">权玹旭〈越界〉，《洛杉矶书评》</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：从小说到电影、从日语到多语、从剧场到银幕——滨口的每一次「搬运」都在损耗原作。这种损耗是他的缺陷，还是他的方法本身？</p>
+      <p>权玹旭的框架至今未被超越：把 adaptation 追溯到拉丁词源 trānslātiō（搬运），滨口的电影便「全是关于搬运的」——身体、记忆、情感与故事的跨境移动。在这个框架里，多语《万尼亚舅舅》不是猎奇设定而是<strong>翻译本论的电影化</strong>：表演者与角色之间、文本与身体之间、手语与口语之间的每一次移动都暴露翻译的裂隙，又都在裂隙上重建信任。「交流是一种翻译的过程」，权玹旭写道，它运行于人与人、语言与语言、动物与人、过去与现在之间（<a href="https://lareviewofbooks.org/article/trespassing-borders-on-hamaguchi-ryusukes-drive-my-car" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。他甚至把「航班取消邮件的文字直接印上画面」读作画框的慷慨：向外来元素开放，放弃内部的密闭与圣洁。</p>
+      <p>沿着这条线，《突如其来》是第三次、也是最彻底的一次越境：《驾驶我的车》把多语剧场放进日本电影，《突如其来》把日本导演整体迁入法语。哥伦比亚标准收藏的评注文章（Bryan Washington 执笔）观察到同一谱系：村上原著的改编史上，市川准《托尼瀑谷》近于「忠实的肖像」、李沧东《燃烧》是「新现实主义化的提纯」，而滨口的路线是「捕捉村上的感觉比一一对应更重要」——忠实的对象从文本转向<strong>感觉的翻译</strong>（<a href="https://www.criterion.com/current/posts/7872-drive-my-car-grace-notes" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。法语片把这个命题推到字面：让「翻译」成为片中被表演的内容（两位主演互学对方语言），而不只是制作事实。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">For the traitorous translator Hamaguchi, communication is a translational process that moves between one human to another, between one language to another, between the performer and the character, between the text and the body, between animal and human, between the past and the present.</div>
+      <div class="trans-zh">「对这位『背叛的译者』滨口而言，交流是一种翻译的过程：它运行于人与人之间、语言与语言之间、表演者与角色之间、文本与身体之间、动物与人之间、过去与现在之间。」</div>
+      <span class="trans-src">权玹旭 · 译文见 translations/03 · <a href="https://lareviewofbooks.org/article/trespassing-borders-on-hamaguchi-ryusukes-drive-my-car">原文</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕《视与听》对滨口的两次采访（《与滨口龙介同路》《滨口龙介的电影课》）从导演端印证了同一件事：他对「改编即再创造」毫不愧疚，并把工作坊——在不同语言的演员身体上试验日本方法——当作越境的前哨站。见总书目。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第四章 ═══ -->
+  <div class="section" id="sec-c4">
+    <div class="section-label">CHAPTER IV · 时间</div>
+    <div class="section-title">偶然与时间</div>
+    <div class="section-subtitle">Contingency as Ontology, Not Device</div>
+    <div class="chapter-quote">
+      <div class="q">「对滨口的人物而言，人生经验似乎就是在为灾难做准备、或从灾难中恢复，灾难的可能悬在每一格画面之上。」</div>
+      <span class="src">渡边一成〈重影〉，《布鲁克林铁路》</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：巧合在一般电影里是剧作工具，在滨口这里为什么读起来像存在论命题？「偶然」从工具变成条件，中间发生了什么？</p>
+      <p>渡边一成论《夜以继日》的段落是标准答案：爱如自然灾害，人物永远在为灾难做准备或从灾难中恢复——3·11 直接入画、秋叶原事件在收音机里、渐冻症在结尾等门。这个语法把「突然」从叙事转折升格为<strong>时间观</strong>：灾难不是打断生活的事件，而是生活的背景辐射。片名「寝ても覚めても」（睡着也好，醒来也罢）标注的「梦与现实之间的永恒中间态」，则是这种时间观的第一人称形式（<a href="https://brooklynrail.org/2019/02/film/Double-Vision-On-Rysuke-Hamaguchis-Asako-I-II" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。</p>
+      <p>哲学的锚点在原著书简里：nippon.com 的研究文章指出，哲学家宫野真生子在书简中反复借助九鬼周造 1935 年的《偶然性的问题》——而「这个题目恰好与滨口龙介对自身电影方法的探索重合」（<a href="https://www.nippon.com/en/japan-topics/c030330/" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。于是序列打通了：《偶然与想象》（原题「偶然与想像」，2021）把偶然当作三段式的引擎；《突如其来》把它推到终点——片名来自主治医生的医嘱「病情可能会突然恶化」，风险话语（「风险管理」「安全安心」）为谁而设，正是书简的追问。长泽朋哉的研究文章进一步记录了导演的现场版本：「拍摄现场，会发生与故事相合的偶然，与不相合的偶然」——把偶然接纳为制作的参数，而不只是剧本的零件（<a href="https://note.com/tomoya_nagasawa/n/n7078ad226044" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。</p>
+      <p>时间形态上，这解释了滨口片长的正当性：196 分钟不是慢，而是<strong>让「准备与恢复」有足够的长度的确证</strong>——《欢乐时光》317 分钟的形体、《驾驶我的车》把片头字幕迟到四十分钟的安排，都是同一个时间观的不同刻度。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">In *Asako I &amp; II*, love is something like a natural disaster or freak accident: with little-to-no warning, a person can enter your life and indefinitely alter it—or destroy it.</div>
+      <div class="trans-zh">「在《夜以继日》里，爱近似一场自然灾害或意外事故：几乎毫无预兆，一个人可以闯入你的生活并无限期地改变它——或者毁掉它。」</div>
+      <span class="trans-src">渡边一成 · 译文见 translations/02 · <a href="https://brooklynrail.org/2019/02/film/Double-Vision-On-Rysuke-Hamaguchis-Asako-I-II">原文</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕顺带一个谱系注脚：滨口对「交通工具上不说话」的坚持（《突如其来》导演回避车内对话场的做法，见 UDCAST 对谈转述）与《驾驶我的车》的车内朗读形成镜像——车在两部片里分别是「沉默的容器」与「语言的容器」。交通工具是他的时间机器。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第五章 ═══ -->
+  <div class="section" id="sec-c5">
+    <div class="section-label">CHAPTER V · 表演</div>
+    <div class="section-title">表演作为事件</div>
+    <div class="section-subtitle">Workshop, Reading, and the Impossible Actor</div>
+    <div class="chapter-quote">
+      <div class="q">「《欢乐时光》最大的魅力，是作为表演者的她们的存在本身。……作为永不穷尽的谜，她们就在电影的中心。」</div>
+      <span class="src">滨口龙介《在摄影机前表演》</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：导演控制表演，还是表演发生在导演不可全控的现场？当职业演员要出演自闭谱系与认知症的人物时，「演」的正当性边界在哪里？</p>
+      <p>方法的第一现场是工作坊：从 ENBU 研究会的《亲密》（2012）、神户 KIITO 的《欢乐时光》（2015），到为《突如其来》在法国办的演员观察工作坊——先有共同工作的时间，再有电影；先有信任，再有表演。谷口惇注意到其中的颠倒：导演不是从高处控制表演，而是「对她们的魅力与谜发自内心地感到惊讶」——这在作家主义以降的批评传统里几乎是一次权力关系的倒转（<a href="https://ecrito.fever.jp/20160119130035" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。《视与听》的两次采访从导演端补充：读本（感情を抜いて繰り返す台詞）沿用自雷诺阿与布列松的线索，是「让文本进入身体」的装置。</p>
+      <p>《突如其来》把表演问题推到伦理的窄口。nobodymag 的长篇访谈里，导演直言：「演技には根本的な無理がある」（表演有其根本的不可能）；片中自闭谱系的友树、认知症的患者，全部由<strong>职业演员</strong>出演——他拒绝把「当事者性」当作选角的筹码，而用排练系统（把「照护的节奏」排进表演）去逼近（<a href="https://www.nobodymag.com/journal/archives/2026/0629_1920.php" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。这与戏中戏的构设同构：观众手里被发放乐器、机构里的提线木偶——「舞台上／舞台下」「演／被演」的边界被故意做旧。 edge5s 的日译长评（004 期已介）与长泽朋哉的文章都把结尾戏中戏的「失控」读作全片真正的电影性时刻——表演作为<strong>事件</strong>而非再现，在控制失效处发生。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">──自閉スペクトラム症や認知症を患った登場人物を当事者ではない俳優を起用して演出するというのは具体的にどのようなプロセスを踏むものなのでしょう？ […] なので、これらの役を演てもらっているのは、みな職業俳優です。</div>
+      <div class="trans-zh">「——请非当事人的演员来演自闭谱系与认知症的人物，具体要经过怎样的过程？〔……〕所以，出演这些角色的，全都是职业演员。」</div>
+      <span class="trans-src">滨口龙介答 nobodymag · 译文为编辑部节译 · <a href="https://www.nobodymag.com/journal/archives/2026/0629_1920.php">原文</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕「表演的根本不可能」这句话可作全章总纲：正因为演谁都不可能「是」，表演才是事件——它与第一章的否定性、第七章的现场性共享同一个逻辑骨架。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第六章 ═══ -->
+  <div class="section" id="sec-c6">
+    <div class="section-label">CHAPTER VI · 实在</div>
+    <div class="section-title">影像与实在：巴赞的法庭</div>
+    <div class="section-subtitle">Bazin on Trial: Trace vs. Idea</div>
+    <div class="chapter-quote">
+      <div class="q">「滨口的电影所回避的，恰恰是这种『世界的摇晃』（＝突然病倒）。」</div>
+      <span class="src">大寺眞輔〈内在批判之槛〉</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：电影画面的重量来自「它拍到了实在」——巴赞的痕迹论。当一部电影用极精巧的设计去处理病、死、失能这些「实在性」最重的题材时，痕迹与观念的比例是否失衡？</p>
+      <p>大寺眞輔的长文是目前把这个问题问得最狠的文本。他的指控分三层：其一，滨口的批判永远是<strong>内在批判</strong>——批判资本主义的人活在其恩惠中，称扬照护的人无法绝对化自己的理念；演出的「平板」恰好洗掉台词的意识形态性，把思辨作为悬置固定下来（这是辩护）。其二，骨灰撒布那场戏之美，是把「身体的消逝」作为审美经验<strong>观念化</strong>了——用巴赞的话说，电影应是现实的痕迹（「有人在那里」的重量刻在影像上），而那个场面把痕迹性悄悄换成了意象。其三，也是最狠的一刀：片名预示「脑与身体骤然错位」的时刻，全片却始终停在知性控制之内——巴士上望见窗外友树的瞬间，画框本该摇晃，空气却纹丝不动。「世界的摇晃」被回避了（<a href="https://note.com/quus/n/n26edf436ac67" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>，全文试译见 translations/01）。</p>
+      <p>编辑部按：这一指控的重量在于它不是口味之争，而是<strong>学科内部的标准之争</strong>——巴赞式的「对世界的信任」是否仍是当代电影的及格线？大寺自己也承认这可能只是「无理取闹」（他括号里的自嘲），并以德普勒尚的鼻血场面作对照项。本刊把它完整呈现在此，因为它同时照亮了前五章：语言的否定性（第一章）可以是对「世界摇晃」的替代性回答——用语言的悬置换取控制之外的实在感；也可以如大寺所论，只是回避的雅名。赞成者与怀疑者共享同一组事实，这正是学术分歧的理想形态。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">濱口の映画が回避しているのは、まさにこの「世界のふらつき」（＝急に具合が悪くなること）ではないかと、現時点では感じている。</div>
+      <div class="trans-zh">「滨口的电影所回避的，恰恰是这种『世界的摇晃』（＝突然病倒）——至少此刻我这样感觉。」</div>
+      <span class="trans-src">大寺眞輔 · 译文见 translations/01 · <a href="https://note.com/quus/n/n26edf436ac67">原文</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕《电影手册》编辑部六人从一星到四星的分裂（004 期第二章）在此获得了理论解释：星级分歧不是趣味差异，而是「痕迹标准」与「设计标准」的分歧。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 第七章 ═══ -->
+  <div class="section" id="sec-c7">
+    <div class="section-label">CHAPTER VII · 伦理</div>
+    <div class="section-title">现场性伦理：从海啸访谈到集会长镜</div>
+    <div class="section-subtitle">The Ethics of Being There</div>
+    <div class="chapter-quote">
+      <div class="q">「在电影中自觉地拍『集会』的，我想全世界只有滨口与蒙吉两个人。……而《邪恶不存在》里的那两位，绝对不来到现场。」</div>
+      <span class="src">松嶋健，世界思想社连载〈置身现场的意义〉</span>
+    </div>
+    <div class="prose">
+      <p><strong>问题</strong>：把摄影机对准一个说话的人，然后等——这个动作的伦理内容是什么？它如何从纪录片实践长成剧情片的方法，最终长成一种拍法（集会长镜）？</p>
+      <p>谱系的原点是 2011–2013 年与酒井耕合作的东北纪录片三部曲。Hyperallergic 的综述给出了被广泛引用的判断：这段经历「让他看到关怀与倾听作为关系构建的基础——尤其是电影作者与被摄者之间的关系」，从此工作坊进入创作流程（<a href="https://hyperallergic.com/ryusuke-hamaguchis-unusual-approach-to-filmmaking" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。世界思想社 2026 年的连载对谈则把这条线接到《突如其来》：人类学家松嶋健指出，「集会」（assemblée）场面——居民说明会、照护机构会议——在当代电影里被拍得这么长、这么自觉，只有滨口与蒙吉两人；反面教材恰是《邪恶不存在》里「绝对不来到现场」的顾问与社长（<a href="https://web.sekaishisosha.jp/posts/9733" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>，译文见 translations/07）。「到现场」由此同时是美学（长镜的耐性）与伦理（谁有资格发言）。</p>
+      <p>《突如其来》的三条文本支柱在「把人当人对待」上会师，是这一伦理的完成态：人性照护法（看、触摸、说话、站立）、宫野×矶野的原著书简、以及松嶋《普西科航海术》里的巴扎利亚传统（意大利废除精神病院的运动史）——滨口明言后者「不只被直接引用，它就在这部电影精神本身的部分」。连载第 5 回以诹访的鹿信仰、「放弃逃跑的鹿回头直视猎人的『回望』与生命的赠与」重读《邪恶不存在》为「当代神话」——现场性伦理的终点，是让自然也成为「注视着人类世界」的一方（<a href="https://web.sekaishisosha.jp/posts/9738" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）。</p>
+    </div>
+    <div class="trans-block">
+      <div class="trans-orig">アッセンブレアとも呼ばれるこうした話し合いの場面を映画でこれだけ長く撮るというのは稀有なことだと思います。 […] これを映画の中で自覚的にやっているのは、濱口監督と今回カンヌでパルム・ドールを受賞したクリスティアン・ムンジウの2人くらいだと思います。</div>
+      <div class="trans-zh">「这种被称为『集会』的商谈场面，在电影里拍得这么长，是罕见的事。〔……〕在电影中自觉地做这件事的，我想全世界也只有滨口导演与这次在戛纳拿了金棕榈的克里斯蒂安·蒙吉两个人。」</div>
+      <span class="trans-src">松嶋健 · 译文见 translations/07 · <a href="https://web.sekaishisosha.jp/posts/9733">原文</a></span>
+    </div>
+    <div class="trans-note" style="font-size:13.5px;color:var(--muted);line-height:1.8">〔编辑部注〕对谈的录制语境本身就是注脚：滨口与「旅する大学」的参与者先步行半日、让身体与土地相习，再看片对谈——「置身现场」先于「谈论电影」。这几乎是工作坊伦理的人类学复刻。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 年谱 ═══ -->
+  <div class="section" id="sec-chrono">
+    <div class="section-label">CHRONOLOGY · 年谱</div>
+    <div class="section-title">导演年谱（1978–2026）</div>
+    <div class="section-subtitle">A Working Chronology</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="tl-year">1978</div><div class="tl-body">生于川崎。幼年随父母客居伊朗（3–5 岁）——自述的最初的「异语言」经验。</div></div>
+      <div class="tl-row"><div class="tl-year">1998</div><div class="tl-body">入东京大学（莲实重彦任总长的最后世代）；在校期间出入电影社团，经「卡萨维茨 2000」特集接触《丈夫们》等作。</div></div>
+      <div class="tl-row"><div class="tl-year">2002–03</div><div class="tl-body">毕业论文〈约翰·卡萨维茨的时间与空间〉，载东京大学《美学艺术学研究》（期号著录存在 21 号 2002 与 22 号 2003 两说）。富川国际电影节等短期交流。</div></div>
+      <div class="tl-row"><div class="tl-year">2006–08</div><div class="tl-body">入东京艺术大学大学院，师从黑泽清。未获勒姆授权的《索拉里斯》（2007）与毕业长片《激情》（2008，东京 Filmex 竞赛）。</div></div>
+      <div class="tl-row"><div class="tl-year">2011–13</div><div class="tl-body">东日本大地震后与酒井耕合作东北纪录片三部曲（《海之声》等）——倾听方法的原点。同时期在 ENBU 研究会主持表演工作坊，产出《亲密》（2012）。</div></div>
+      <div class="tl-row"><div class="tl-year">2015</div><div class="tl-body">神户 KIITO 工作坊长成《欢乐时光》（317 分钟），洛迦诺主竞赛＋四位素人女主角并列最佳女演员、剧本特别提及。著《在摄影机前表演》（NTT 出版）。</div></div>
+      <div class="tl-row"><div class="tl-year">2018</div><div class="tl-body">《夜以继日》入围戛纳主竞赛；《ユリイカ》2018 年 9 月号推出滨口龙介总特集（莲实重彦执笔）。三浦哲哉《〈欢乐时光〉论》出版——滨口研究专著化的起点。</div></div>
+      <div class="tl-row"><div class="tl-year">2021</div><div class="tl-body">《偶然与想象》柏林银熊评审团大奖；《驾驶我的车》戛纳最佳剧本等四奖。次年奥斯卡最佳国际影片，并成为史上首部提名奥斯卡最佳影片的日本电影。</div></div>
+      <div class="tl-row"><div class="tl-year">2023</div><div class="tl-body">《邪恶不存在》威尼斯评审团大奖；成为黑泽明之后第二位在欧洲三大与奥斯卡均有获奖的日本导演。电影论《他なる映画と》全二册（Inscript，2024 刊行）在此前后成书。</div></div>
+      <div class="tl-row"><div class="tl-year">2024–25</div><div class="tl-body">《在镜头前表演》繁体中文版出版（首部中文作品集，含《欢乐时光》原始剧本）；《寻找演出：电影的读书会》（フィルムアート社）刊行。</div></div>
+      <div class="tl-row"><div class="tl-year">2026</div><div class="tl-body">《突如其来》（法日德比合拍，196 分钟）入围戛纳主竞赛，维尔日妮·埃菲拉与冈本多绪并列最佳女演员；日本 6.19 公映、法国 8.12 公映。世界思想社连载对谈与长泽朋哉研究文章相继问世——「滨口研究」进入学术加速期。</div></div>
+    </div>
+    <div style="font-size:12.5px;color:var(--muted);line-height:1.75;margin-top:10px">年谱事实以维基（日／英）、nippon.com、Cineaste 访谈与本刊 research 存档交叉核验；伊朗经历、东大年代等自述细节均出自导演访谈。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 总书目 ═══ -->
+  <div class="section" id="sec-biblio">
+    <div class="section-label">BIBLIOGRAPHY · 总书目</div>
+    <div class="section-title">研究文献总目</div>
+    <div class="section-subtitle">An Annotated Bibliography</div>
+
+    <div class="biblio-cat">一、导演本人的理论写作</div>
+    <div class="biblio-item">滨口龙介〈约翰·卡萨维茨的时间与空间〉，东京大学《美学艺术学研究》（期号两说并存，见年谱 2002–03 条），pp.303–340——学术起点，CiNii 收录。</div>
+    <div class="biblio-item">《カメラの前で演じること》（与野原位、高桥知由，NTT 出版，2015）——方法自述；《在镜头前表演》（繁体中文版，2024，含《欢乐时光》原始剧本）。</div>
+    <div class="biblio-item">《他なる映画と》全二册（Inscript，2024）——电影讲义集；第一讲回到「看仔细、听清楚」的莲实纪律（编辑部未见原书，据书评与千叶对谈著录）。</div>
+    <div class="biblio-item">《演出をさがして 映画の勉強会》（与三宅唱、三浦哲哉，フィルムアート社，2025，ISBN 978-4-8459-2500-1）。</div>
+    <div class="biblio-item">〈从《邪恶不存在》的地平到《突如其来》的奇迹〉，世界思想社 web 连载（与松嶋健对谈，全五回，2026）——<a href="https://web.sekaishisosha.jp/posts/9733">第 1 回</a>／<a href="https://web.sekaishisosha.jp/posts/9738">第 5 回</a>。</div>
+
+    <div class="biblio-cat">二、学术专著・论文・特集</div>
+    <div class="biblio-item">三浦哲哉《『ハッピーアワー』論》（羽鸟书店，2018）——首部滨口研究专著。</div>
+    <div class="biblio-item">《『ドライブ・マイ・カー』論》（编著）——专题论文集（经学术书评志 REPRE Vol.49 著录）。</div>
+    <div class="biblio-item">〈ワークショップ映画と俳優の創作的ミメーシス〉（CiNii 收录）——直接以工作坊电影为对象的学术论文。</div>
+    <div class="biblio-item">《ユリイカ》2018 年 9 月号总特集〈濱口竜介〉（青土社，第 50 卷第 12 号）——莲实重彦执笔参与。</div>
+    <div class="biblio-item">英文学术样本：〈『The Word Silence Is Still a Sound』〉（ResearchGate，2023，论《驾驶我的车》声音政治）；〈A Ryûsuke Hamaguchi Movie: "Walden"〉（EJLLL 开源期刊，论早期纪录片）。编辑部未取得前查全文，著录据数据库。</div>
+
+    <div class="biblio-cat">三、深度批评（本刊精译七篇）</div>
+    <div class="biblio-item">大寺眞輔〈内在批判之槛〉（note.com，2026）——<a href="https://note.com/quus/n/n26edf436ac67">原文</a>；translations/01。</div>
+    <div class="biblio-item">渡边一成〈重影：论〈夜以继日〉〉（Brooklyn Rail，2019.02）——<a href="https://brooklynrail.org/2019/02/film/Double-Vision-On-Rysuke-Hamaguchis-Asako-I-II">原文</a>；translations/02。</div>
+    <div class="biblio-item">权玹旭〈越界〉（LARB，2021.12）——<a href="https://lareviewofbooks.org/article/trespassing-borders-on-hamaguchi-ryusukes-drive-my-car">原文</a>；translations/03。</div>
+    <div class="biblio-item">权玹旭访滨口〈不纯的电影〉（Cineaste，2023 秋季号）——<a href="https://www.cineaste.com/fall2023/impure-cinema-an-interview-with-ryusuke-hamaguchi/">原文</a>；translations/04。</div>
+    <div class="biblio-item">谷口惇〈幸福的时间的成分〉（『エクリヲ』，2016）——<a href="https://ecrito.fever.jp/20160119130035">原文</a>；translations/05。</div>
+    <div class="biblio-item">早川由真〈无比明晰，因而深不可测〉（早川书房 web，2021.12）——<a href="https://www.hayakawabooks.com/n/nbf78ae8261e9">原文</a>；translations/06。</div>
+    <div class="biblio-item">滨口×松嶋×松村对谈（世界思想社，2026）——translations/07（链接见上）。</div>
+
+    <div class="biblio-cat">四、英语学刊与导演访谈（未全文精译）</div>
+    <div class="biblio-item">Sight &amp; Sound〈At the movies with Hamaguchi Ryūsuke〉（2022.04）——导演自选片单与自述——<a href="https://www.bfi.org.uk/sight-and-sound/features/movies-with-hamaguchi-ryusuke">原文</a>；〈On the road with Hamaguchi〉——<a href="https://www.bfi.org.uk/sight-and-sound/interviews/hamaguchi-ryusuke-drive-my-car">原文</a>。</div>
+    <div class="biblio-item">Bryan Washington〈Drive My Car: Grace Notes〉（Criterion，2022）——<a href="https://www.criterion.com/current/posts/7872-drive-my-car-grace-notes">原文</a>。</div>
+    <div class="biblio-item">Hyperallergic（Ren Scateni，2021.10）；Senses of Cinema CTEQ 论《夜以继日》（2026，付费墙仅存节选）；Psychocinematography 导演论页。</div>
+
+    <div class="biblio-cat">五、日语批评与研究（未全文精译）</div>
+    <div class="biblio-item">长泽朋哉〈滨口龙介说了什么——论〈突如其来〉的意图与工夫〉（note.com，2026）——系统转述导演回顾谈（含音声向导对谈）——<a href="https://note.com/tomoya_nagasawa/n/n7078ad226044">原文</a>。</div>
+    <div class="biblio-item">nobodymag：〈「只有做电影才会相遇的事」〉滨口访谈（2026.06.29）——<a href="https://www.nobodymag.com/journal/archives/2026/0629_1920.php">原文</a>；滨口三部长访（2016–18）；梅本洋一〈致滨口龙介的信〉。</div>
+    <div class="biblio-item">『エクリヲ』：〈危机之后的戏剧——滨口龙介论〉（2018.09）与滨口长篇访谈（2018.09）——本刊已存目待译。</div>
+    <div class="biblio-item">《电影旬报》相关滨口特集与访谈——纸本未取得，如实标注「编辑部未取得全文」。</div>
+
+    <div class="biblio-cat">六、原著与哲学背景</div>
+    <div class="biblio-item">宫野真生子、矶野真穗《急に具合が悪くなる》（晶文社，2019）——二十封书简；哲学参照九鬼周造《偶然性的问题》（1935）。</div>
+    <div class="biblio-item">松嶋健《普西科航海术——意大利精神医疗的人类学》（世界思想社）——《突如其来》第三文本支柱（巴扎利亚传统）。</div>
+    <div class="biblio-item">Humanitude 照护方法学（Gineste &amp; Marescotti，1970 年代末创立）：看、触摸、说话、站立。</div>
+  </div>
+
+  <!-- ═══ 二维码 ═══ -->
+  <div class="qr-section">
+    <img src="assets/qr-sp-hamaguchi.png" alt="扫码访问学术特刊">
+    <div class="label">扫码收藏本特刊</div>
+    <div class="url">ren1003497048-del.github.io/changkan/sp-hamaguchi.html</div>
+  </div>
+
+  <!-- ═══ 来源索引 ═══ -->
+  <div class="source-index">
+    <p><strong>译文来源：</strong>本刊七篇精译的原文链接均随文标注，双语全文见本地 translations/ 目录（研究用途，不上传线上仓库）。</p>
+    <p><strong>研究存档：</strong>004 期 research/（deep2_*.txt、deep3_*.txt 共 28 篇）与本刊 research/（s_*.json 检索 ×6、t_*.txt 全文 ×6）。</p>
+    <p><strong>单源标注：</strong>《突如其来》画幅 1.5:1 出自 UDCAST 音声向导对谈与相关讲谈（经长泽朋哉文转述），官方未正式公布；卒论期号两说并存；Senses of Cinema CTEQ、《电影旬报》纸本未取得全文。</p>
+    <p><strong>关联阅读：</strong><a href="https://ren1003497048-del.github.io/changkan/004.html" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">第四期《突如其来》</a>（单片场刊：口碑、影评三篇、技术细部、号外方法研究）。</p>
+  </div>
+
+  <!-- ═══ 封底 ═══ -->
+  <div class="colophon">
+    <div class="mast">场　刊</div>
+    <div style="font-family:'Playfair Display',serif;font-size:11px;color:var(--bronze);letter-spacing:0.2em;margin-bottom:8px;font-style:italic">THE PROGRAMME · SPECIAL</div>
+    <div class="info">
+      观影之前，先翻场刊<br><br>
+      学术特刊　滨口龙介：七个美学问题<br>
+      2026 年 8 月 27 日<br><br>
+      新片信息的深度速览 · 权威影评的汇编评注<br><br>
+      © 2026 The Programme · 场刊<br>
+      ren1003497048-del.github.io/chankan<br>
+      <a href="https://ren1003497048-del.github.io/changkan/archive.html">往期总目 · Archive</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+function toggleTopnav(e){e.stopPropagation();var p=document.getElementById('topnav-panel');p.style.display=p.style.display==='none'?'block':'none'}
+document.addEventListener('click',function(e){var p=document.getElementById('topnav-panel');if(p&&!p.contains(e.target)&&e.target.id!=='topnav-btn')p.style.display='none'});
+</script>
+</body>
+</html>
