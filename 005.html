@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>场刊 · 高弧慢球 · 第五期</title>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="场刊 The Programme">
+<meta property="og:title" content="场刊 · 第五期 · 高弧慢球">
+<meta property="og:description" content="一场没有冲突、只有结束的棒球赛——卡森·伦德首作《Eephus》与 Omnes 电影小组：时间、业余性与观看的政治学。戛纳导演双周。">
+<meta property="og:image" content="https://ren1003497048-del.github.io/changkan/assets/cover-banner-005.jpg">
+<meta property="og:url" content="https://ren1003497048-del.github.io/changkan/005.html">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a18;--ink-soft:#3a3a36;--bronze:#8b6914;--bronze-deep:#6b5010;
+  --crimson:#8b3a2e;--teal:#2c4a36;--muted:#6b665c;--faint:#9c968a;
+  --rule:#e0dbcf;--rule-fine:#ede8de;--bg:#faf8f3;--card:#ffffff;--highlight:#fdf6ec;
+  /* 005 主题：新英格兰秋日球场——草地绿与红土 */
+  --grass:#24382b;--clay:#a06a4a;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(250,248,243,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.topbar-title{font-size:15px;font-weight:700;letter-spacing:0.1em}
+.topbar-en{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--bronze);letter-spacing:0.2em}
+.menu-btn{background:none;border:none;font-size:20px;color:var(--bronze);cursor:pointer;padding:4px 8px}
+.drawer{position:fixed;top:0;left:-280px;width:280px;height:100vh;background:var(--card);box-shadow:2px 0 20px rgba(0,0,0,0.1);z-index:200;transition:left 0.3s;overflow-y:auto;padding:20px}
+.drawer.open{left:0}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:150;display:none}
+.drawer-overlay.show{display:block}
+.drawer-title{font-size:18px;font-weight:700;margin-bottom:16px}
+.drawer-item{display:block;padding:10px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-size:14px;cursor:pointer}
+.drawer-item .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.drawer-close{position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer}
+.cover{margin:0 -20px 20px;position:relative;overflow:hidden;background:var(--grass)}
+.cover-img{width:100%;height:400px;object-fit:cover;display:block;opacity:0.94}
+.cover-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 20px 20px;background:linear-gradient(transparent,rgba(20,30,22,0.92))}
+.cover-en{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#e8d8a0;letter-spacing:0.08em}
+.cover-zh{font-size:18px;font-weight:600;color:#ecd9a0;letter-spacing:0.15em;margin-top:4px}
+.cover-meta{display:flex;margin:16px 0;border-top:1px solid rgba(250,248,243,0.35);border-bottom:1px solid rgba(250,248,243,0.35);padding:8px 0}
+.cover-meta-item{flex:1;text-align:center;font-size:10px;color:#d8cfae;border-right:1px solid rgba(250,248,243,0.25)}
+.cover-meta-item:last-child{border-right:none}
+.cover-meta-item strong{display:block;font-size:12px;color:#fdf6ec;margin-top:2px}
+.section{margin:32px 0 16px;scroll-margin-top:56px}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--bronze);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:4px}
+.section-title{font-size:22px;font-weight:700;line-height:1.35;margin-bottom:2px}
+.section-subtitle{font-family:'Playfair Display',serif;font-size:12px;color:var(--bronze);letter-spacing:0.1em;margin-bottom:16px;font-style:italic}
+.prose{font-size:16px;line-height:1.95;color:var(--ink);text-align:justify}
+.prose p{margin-bottom:16px}
+.prose strong{font-weight:700}
+.sub-heading{font-size:18px;font-weight:700;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--teal);color:var(--ink)}
+.sub-heading-crimson{font-size:17px;font-weight:700;margin:20px 0 8px;padding-left:10px;border-left:3px solid var(--crimson)}
+.blockquote{margin:18px 0;padding:16px 20px;background:var(--card);border-left:3px solid var(--bronze);border-radius:0 8px 8px 0}
+.blockquote .text{font-size:15px;line-height:1.9;color:var(--ink)}
+.blockquote .source{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.blockquote .source a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.meander{height:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 2 L0 6 L5 6 L5 4 L2.5 4 L2.5 2 L7.5 2 L7.5 6 L12.5 6 L12.5 2 L17.5 2 L17.5 4 L15 4 L15 6 L20 6 L20 2 L25 2 L25 6 L30 6 L30 2 L35 2 L35 6 L40 2' fill='none' stroke='%238b6914' stroke-width='0.6' opacity='0.3'/%3E%3C/svg%3E");background-repeat:repeat-x;margin:20px 0}
+.divider{height:1px;background:var(--rule);margin:28px 0}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.score-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px}
+.score-card .pub{font-family:'Playfair Display',serif;font-size:13px;font-weight:600}
+.score-card .num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--bronze)}
+.score-card .desc{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.stars{font-size:14px;color:var(--bronze);letter-spacing:2px}
+.stars .e{color:var(--rule)}
+.critic{padding:10px 0;border-bottom:1px solid var(--rule)}
+.critic:last-child{border-bottom:none}
+.critic .name{font-size:14px;font-weight:600}
+.critic .name .pub{font-weight:400;color:var(--muted);margin-left:4px;font-size:12px}
+.critic .quote{font-size:14px;line-height:1.8;color:var(--ink);margin-top:4px}
+.specs{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.specs td{padding:4px 6px;border-bottom:1px solid var(--rule);line-height:1.6;vertical-align:top}
+.specs td:first-child{width:26%;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze)}
+.format-item{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.format-item .rank{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--bronze);font-size:14px;width:28px}
+.format-item .name{flex:1;font-size:14px}
+.format-item .note{font-size:11px;color:var(--muted)}
+.trans-block{margin:20px 0;padding:16px 18px;background:var(--card);border-left:3px solid var(--teal);border-radius:0 8px 8px 0}
+.trans-orig{font-size:13px;line-height:1.75;color:var(--ink-soft);margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--rule)}
+.trans-zh{font-size:15px;line-height:1.9;color:var(--ink)}
+.trans-src{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bronze)}
+.trans-src a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.extra-section{margin:32px 0 16px;padding:24px 20px;background:linear-gradient(180deg,var(--bg),#f3efe2);border:1px solid var(--rule);border-radius:12px}
+.extra-banner{text-align:center;margin-bottom:20px}
+.extra-banner .label{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#faf8f3;background:var(--crimson);padding:4px 16px;border-radius:100px;letter-spacing:0.3em;margin-bottom:12px}
+.qr-section{text-align:center;margin:32px 0 16px;padding:24px;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+.qr-section img{width:140px;height:140px;margin-bottom:12px}
+.qr-section .label{font-size:15px;font-weight:700;margin-bottom:4px}
+.qr-section .url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bronze)}
+.colophon{text-align:center;margin:32px 0 16px;padding:24px 0;border-top:1px solid var(--rule)}
+.colophon .mast{font-size:16px;font-weight:700;letter-spacing:0.15em;margin-bottom:4px}
+.colophon .info{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);line-height:1.8}
+.colophon .info a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+.source-index{font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid var(--rule);margin-top:20px;padding-top:12px}
+.source-index p{margin-bottom:4px}
+.source-index strong{color:var(--ink)}
+.source-index a{color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)}
+i.pub-en{font-family:'Playfair Display',serif;font-style:italic;font-weight:400}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" onclick="openDrawer()">☰</button>
+  <div><div class="topbar-title">场　刊</div><div class="topbar-en">THE PROGRAMME · 第〇〇五期</div></div>
+  <div style="position:relative">
+    <button id="topnav-btn" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 6px" onclick="toggleTopnav(event)">No.005 ▾</button>
+    <div id="topnav-panel" style="display:none;position:absolute;right:0;top:100%;background:var(--card);border:1px solid var(--rule);border-radius:8px;box-shadow:0 10px 28px rgba(26,26,24,.14);min-width:200px;padding:6px 0;z-index:300">
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/">001　奥德赛</a>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/002.html">002　蜘蛛侠：崭新之日</a>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/003.html">003　挽救计划</a>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--ink);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/004.html">004　突如其来</a>
+      <div style="height:1px;background:var(--rule);margin:6px 0"></div>
+      <a style="display:block;padding:8px 18px;font-size:13px;color:var(--bronze);font-weight:700;text-decoration:none" href="https://ren1003497048-del.github.io/changkan/005.html">005　高弧慢球 · 本期</a>
+      <a style="display:block;padding:8px 18px;font-size:12px;color:var(--bronze-deep);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/sp-hamaguchi.html">学术特刊 · 滨口龙介</a>
+      <a style="display:block;padding:8px 18px;font-size:12px;color:var(--bronze-deep);text-decoration:none" href="https://ren1003497048-del.github.io/changkan/archive.html">往期总目 · Archive</a>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  <div class="drawer-title">目　录</div>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-file"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">I</span>影片档案<div class="sub">制作信息与演职员</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-reception"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">II</span>口碑速览<div class="sub">评分汇总与影评人评语</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-editorial"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">III</span>当棒球开始告别<div class="sub">编者前言</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay1"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">IV</span>一天与一代<div class="sub">时间的政治学</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay2"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">V</span>车灯民主<div class="sub">业余性作为抵抗</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-essay3"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VI</span>记分员的凝视<div class="sub">Franny 与影院观众</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-tech"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VII</span>技术细部分析<div class="sub">探戈的镜头与电台的声音</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-guide"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">VIII</span>观影指南<div class="sub">格式推荐与观看窗口</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-trans"><span style="font-family:'JetBrains Mono';color:var(--bronze);font-size:10px;margin-right:8px">IX</span>译丛<div class="sub">Cineaste 访谈与 LARB 论文节译</div></a>
+  <a class="drawer-item" onclick="closeDrawer()" href="#sec-extra"><span style="font-family:'JetBrains Mono';color:var(--crimson);font-size:10px;margin-right:8px">号外</span>Omnes 电影小组<div class="sub">一群朋友的生产关系</div></a>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ 封面 ═══ -->
+  <div class="cover">
+    <img class="cover-img" src="assets/cover-banner-005.jpg" alt="《高弧慢球》官方剧照：秋日球场">
+    <div class="cover-overlay">
+      <div class="cover-en">EEPHUS</div>
+      <div class="cover-zh">高弧慢球</div>
+      <div class="cover-meta">
+        <div class="cover-meta-item">导演<strong>卡森·伦德（首作）</strong></div>
+        <div class="cover-meta-item">片长<strong>98 分钟</strong></div>
+        <div class="cover-meta-item">制式<strong>法美合制 · 英语</strong></div>
+        <div class="cover-meta-item">首映<strong>2024 戛纳导演双周</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ I 影片档案 ═══ -->
+  <div class="section" id="sec-file">
+    <div class="section-label">I — FILM FILE</div>
+    <div class="section-title">影片档案</div>
+    <div class="section-subtitle">Production &amp; Cast</div>
+    <table class="specs">
+      <tr><td>导演／剪辑</td><td>卡森·伦德（Carson Lund，长片首作）</td></tr>
+      <tr><td>编剧</td><td>卡森·伦德、迈克尔·巴斯塔（Michael Basta）、内特·费舍尔（Nate Fisher）</td></tr>
+      <tr><td>摄影</td><td>格雷格·探戈（Greg Tango）</td></tr>
+      <tr><td>音乐</td><td>卡森·伦德、埃里克·伦德（Eric Lund，导演之弟）</td></tr>
+      <tr><td>制片</td><td>迈克尔·巴斯塔、大卫·恩廷、泰勒·陶尔米纳（Tyler Taormina）、迈克尔·里克特</td></tr>
+      <tr><td>制作公司</td><td>Omnes Films（美，电影小组）· Nord-Ouest Films（法）等</td></tr>
+      <tr><td>发行</td><td>Music Box Films（美国）</td></tr>
+      <tr><td>片长</td><td>98 分钟</td></tr>
+      <tr><td>画幅／制式</td><td>未见官方公开说明（截至 2026.08.27）</td></tr>
+      <tr><td>首映</td><td>2024.05.09　第 77 届戛纳电影节导演双周（竞逐金摄影机奖）</td></tr>
+      <tr><td>公映</td><td>2025.03.07（美国）／2025 秋（日本，片名《さよならはスローボールで》）／中国大陆暂无档期信息</td></tr>
+      <tr><td>票房</td><td>约 100 万美元（艺术院线发行）</td></tr>
+    </table>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">剧情梗概（含轻微剧透）</div>
+    <div style="font-size:14px;color:var(--ink-soft);line-height:1.85">
+      1990 年代，马萨诸塞州小镇道格拉斯。电台晨间新闻宣布：士兵球场（Soldiers Field）将被拆除，原址兴建一所小学。于是，阿德勒涂料队（Adler's Paint）与河犬队（Riverdogs）——两支星期天联盟的业余球队——回到这块他们打了几十年的草地上，打最后一场球。记分员弗兰尼（Franny）第一个到场，摆好桌椅，在记分簿上写下日期。九局打完天还没黑透？那就打开车灯接着打。这部电影没有对手戏意义上的「对手」：唯一的悬念，是这一天如何结束。
+    </div>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">主要演员</div>
+    <table class="specs">
+      <tr><td>基思·威廉·理查兹</td><td>艾德（Ed Mortanian）　阿德勒涂料队投手兼队长，执意投完九局；演员首个主演角色</td></tr>
+      <tr><td>克利夫·布莱克</td><td>弗兰尼（Franny）　记分员，全场唯一从头到尾在场的人——「影片的灵魂」（导演语）</td></tr>
+      <tr><td>弗雷德里克·怀斯曼</td><td>布兰奇·莫兰（Branch Moreland）　电台记者，声音出演——纪录片大师客串虚构电影</td></tr>
+      <tr><td>雷·赫里布</td><td>里奇（Rich Cole）　河犬队老兵，把一切都比作「战斗」</td></tr>
+      <tr><td>比尔·「太空人」·李</td><td>李　前大联盟传奇投手，饰同名角色</td></tr>
+      <tr><td>乔·卡斯蒂廖内</td><td>马利纳里（Mallinari）　红袜电台元老解说，客串憎恶本行的播报员</td></tr>
+    </table>
+    <div class="meander"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--bronze);margin-bottom:6px">Omnes Films 小组速览</div>
+    <div style="font-size:14px;color:var(--ink-soft);line-height:1.8">
+      本片不是一部「作者电影」，而是一个电影小组的作品：Omnes Films——拉丁语「所有人」。核心成员卡森·伦德、泰勒·陶尔米纳、迈克尔·巴斯塔、乔纳森·戴维斯与埃里克·伦德，互相出现在彼此的片单里：伦德为陶尔米纳的新片掌镜，陶尔米纳为本片监制。没有公司章程，没有宣言，用陶尔米纳的话说，「一群朋友在彼此的热情项目上互相干活」。他们的全部作品共享一个母题——「文化衰朽」。详见本期号外。
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ II 口碑速览 ═══ -->
+  <div class="section" id="sec-reception">
+    <div class="section-label">II — RECEPTION</div>
+    <div class="section-title">口碑速览</div>
+    <div class="section-subtitle">Scores &amp; Appraisals</div>
+    <div class="scores">
+      <div class="score-card"><div class="pub">Metacritic</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">84</div><div class="desc">22 篇评论，「普遍赞誉」（Universal Acclaim，2026.08.27 查询）。</div></div>
+      <div class="score-card"><div class="pub">戛纳导演双周</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">入围</div><div class="desc">2024 竞逐金摄影机奖（长片首作单元视角的荣誉）。</div></div>
+      <div class="score-card"><div class="pub">豆瓣</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">7.4</div><div class="desc">条目《高弧慢球》；评价两极（「纯粹」与「打瞌睡」并存），小众样本（2026.08.27 查询）。</div></div>
+      <div class="score-card"><div class="pub">Letterboxd</div><div class="stars">★★★★<span class="e">☆</span></div><div class="num">口碑偏正面</div><div class="desc">平均分未取权威数值，仅记分布倾向（2026.08.27）。</div></div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.7;margin:6px 0 12px">评分均标注查询日期；豆瓣与 Letterboxd 样本量小，仅供参照。</div>
+    <div class="meander"></div>
+    <div class="sub-heading">评语</div>
+    <div class="critic"><div class="name">《电影人》Cineaste 访谈<span class="pub">Paul Risker 采，2025 夏季号　<a href="https://www.cineaste.com/summer2025/cinema-and-baseballs-shared-crisis-an-interview-about-eephus-with-carson-lund/">原文</a></span></div><div class="quote">「棒球正处于危机之中，独立电影与电影艺术整体亦然——我想从中提炼出一点什么。」——伦德谈片名与拍片的出发点；访谈全文节译见第 IX 章。</div></div>
+    <div class="critic"><div class="name">马修·里奇<span class="pub">《洛杉矶书评》LARB　<a href="https://lareviewofbooks.org/article/so-unnaturally-slow">原文</a></span></div><div class="quote">「《高弧慢球》与其说是一部电影，不如说是对棒球悠闲时代的一场纪念。」「棒球自会告诉你，它何时不再需要你。」全文节译见第 IX 章。</div></div>
+    <div class="critic"><div class="name">Reverse Shot<span class="pub">美国独立批评重镇　<a href="https://reverseshot.org/reviews/entry/3262/eephus">原文</a></span></div><div class="quote">将其置于「消磨时光电影」（hangout film）的谱系中考量——影片以「形式的耐心」对抗叙事效率（编辑部综述，详见第 IV 章）。</div></div>
+    <div class="critic"><div class="name">哈佛电影资料馆<span class="pub">Harvard Film Archive 专文　<a href="https://harvardfilmarchive.org/programs/make-way-for-tomorrow-carson-lunds-eephus">原文</a></span></div><div class="quote">「由资深纪录片人弗雷德里克·怀斯曼配音旁白，点缀着从两座休息区模拟收录机里飘出的复古电台广告，影片以细致入微的观察传统展开。」</div></div>
+    <div class="critic"><div class="name">BOMB 杂志<span class="pub">艺术家对谈传统　<a href="https://bombmagazine.org/articles/2025/03/17/carson-lund-eephus">原文</a></span></div><div class="quote">片尾「画外的烟花与钟楼敲响的钟声，明确宣告了比赛的终结」——关于那个著名的结尾，见第 IV 章分析。</div></div>
+    <div class="critic"><div class="name">InReviewOnline<span class="pub">独立批评　<a href="https://inreviewonline.com/2024/06/03/embracing-the-ellipsis-an-interview-with-carson-lund">访谈原文</a>／<a href="https://inreviewonline.com/2025/03/07/eephus-2025-review">评论原文</a></span></div><div class="quote">导演自述从「蔡明亮、《双车道柏油路》式的慢电影能量」中寻找平衡；评论称摄影探戈「惟妙惟肖地模仿了伦德本人的掌镜」。</div></div>
+    <div class="critic"><div class="name">豆瓣观众（保留意见）<span class="pub">中文观众层　<a href="https://movie.douban.com/subject/35573302/comments">短评页</a></span></div><div class="quote">「不可否认，观感极为平淡。」「观影过程就是个打瞌睡的过程。」——负面意见集中于：不了解棒球机制难以进入、叙事动力阙如。这是本片口碑两极的另一面，与 7.4 的分数互相印证。</div></div>
+    <div class="critic"><div class="name">GQ Japan<span class="pub">日本公映口径　<a href="https://www.gqjapan.jp/article/20251016-sayonara-slow-ball-movie-review">原文</a></span></div><div class="quote">「从打草棒（业余周末联赛）的男人们身上渗出的悲哀，与这场不肯结束的比赛所象征的东西」——日本版片名直译「告别当以慢球」。</div></div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ III 编者前言 ═══ -->
+  <div class="section" id="sec-editorial">
+    <div class="section-label">III — EDITORIAL</div>
+    <div class="section-title">当棒球开始告别</div>
+    <div class="section-subtitle">Editor's Note</div>
+    <div class="prose">
+      <p>先解释片名。Eephus，棒球里一种近乎绝迹的投法：把球以极高的弧线、极慢的速度抛向本垒——慢到击球手会「失去对时间的跟踪」。它不追求制胜，只扰乱对方对时间的把握。一部以此命名的电影，讲的也正是一群中年男人与时间的角力：球场要拆了，这是最后一场球，而他们打完了正规局数还不想走，于是打开车灯，继续。</p>
+      <p>这部电影的特别之处，在于它把「什么都发生」拍成了「什么都没发生」：没有闪回，没有场外戏，没有主角弧光，甚至没有传统意义上的冲突。看它，更像是坐在球场边晒了一下午太阳。而恰恰是这种「无事」，让 2024 年的戛纳导演双周记住了它，让《洛杉矶书评》为它写了长文，让拍了一辈子纪录片、九十四岁的弗雷德里克·怀斯曼愿意来配一段电台旁白。</p>
+      <p>本期场刊沿<a href="https://ren1003497048-del.github.io/changkan/004.html" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">第四期</a>与<a href="https://ren1003497048-del.github.io/changkan/sp-hamaguchi.html" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">滨口学术特刊</a>的路线：口碑与技术之外，把重心放在学术与深度批评——《电影人》杂志的长访、LARB 的论文、哈佛电影资料馆的专文、Reverse Shot 的评论——并以号外研究片后的 Omnes 电影小组：在一个作者制与流媒体双头挤压的行业里，「一群朋友互相拍片」意味着什么。为不熟悉棒球的读者：必要的规则与俚语，正文首现处均随文自释。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ IV 影评之一 ═══ -->
+  <div class="section" id="sec-essay1">
+    <div class="section-label">IV — ESSAY I</div>
+    <div class="section-title">一天与一代</div>
+    <div class="section-subtitle">The Politics of Time</div>
+    <div class="prose">
+      <p>《高弧慢球》的全部叙事时间不到一天，却压着一整代人的时间。这不是修辞：影片的天色本身就是结构——从秋日午后到黄昏，再到车灯下的夜。伦德在《电影人》访谈里说得明白：「随着天黑，球场变得抽象——它失去清晰与形状。阴影里，你失去球场的组织性，<strong>场域本身在影片的进程里衰朽</strong>。」时间在片中不是一个维度，而是主角之一：光线走完它的一天，恰如这群人的棒球生涯走完它的几十年。</p>
+      <p>把影片放进时代坐标，这个设计更加锋利。2023 年，美国职业棒球大联盟启用「投球时钟」，强制压缩比赛节奏，把动辄三小时的比赛塞进两个半小时——用 LARB 影评人马修·里奇的话说，棒球正在「试图挤进其他娱乐形式的形状」。而伦德把他的球赛设在 1990 年代，时钟尚未到来，时间的唯一边界是日光与裁判的耐心。《高弧慢球》由此成为「对棒球悠闲时代的一场纪念」。需要说明的是，「纪念」发生在影片的形式而非角色的意识里：片中人对「时钟之前」一无所知，是等速、无高潮的形式本身在替今天完成追悼——影片是站在投球时钟时代回望的一部关于「之前」的电影。</p>
+      <p>更进一步的，是影片对叙事成规本身的拒绝。伦德说：「一部只是渐弱（decrescendo）的电影，本身就是对叙事电影继承观念的一种回击——电影总是积累向一个高潮，而这部正相反。」九局战罢，胜负未分；车灯亮起，他们续赛；直到最后，结束的方式不是再见全垒打（walk-off：下半局一击终结比赛的教科书结尾），而是一次四坏球保送（投手接连投失四球，击球员被礼貌地请上一垒）——不战而终。「<strong>棒球自会告诉你，它何时不再需要你</strong>」里奇写道，「以耳语结束了许多人的职业生涯」。这部电影的「一天」，因此是一代人与一项运动相互告别的全过程：慢到足以让人来得及告别——影片至少提供了这种可能性；是否仁慈，留给散场后的观众。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ V 影评之二 ═══ -->
+  <div class="section" id="sec-essay2">
+    <div class="section-label">V — ESSAY II</div>
+    <div class="section-title">车灯民主</div>
+    <div class="section-subtitle">Amateurism as Resistance</div>
+    <div class="prose">
+      <p>影片最动人的段落，发生在裁判离开之后。按小时收费的裁判下班走人，比赛却没有理由停止：两队自己商量规则，请记分员弗兰尼坐进广播席充当「中立第三方」，用汽车大灯照出一块可以续赛的内野。伦德在访谈里把它称为「一种不完美但流动的民主」——没有权威之后，「他们想尽办法继续下去，无论多么混乱」。</p>
+      <p>这个场景的政治性，被导演自己点破：「我们之所以不再有从前那样的闲暇时间，是因为美国的政治烂掉了……人们必须打两三份工才能糊口，这种压力之下，没有人有时间只是待着，去做那些他们热爱的事——去拥有『无意义的时间』。」在「优化每一刻、让每一刻都产生货币价值」的晚期资本主义时间里，一群业余球员坚持把一场没有意义的比赛打完，本身就被导演赋予了异议的姿态——严格说，这份政治性成立于影片上映的当下语境（导演访谈中的自我阐释），而非 1990 年代剧情内部的自觉。伦德不夸张：「也许它甚至有点激进——它在请求我们珍视死时间（dead time），并想办法让它重新成为生活的一部分。」</p>
+      <p>「业余」在这里必须按词源理解：amateur，爱其所做之人。片中大量动作发生在画外——你只听到球棒的声音，看到失意的击球员走回休息区的背影；真正的镜头时间给了垃圾话、争执、找球的漫游。这是一种对「精彩」的系统性的拒绝：业余比赛的迷人处从来不是竞技水平（里奇笔下的「次优表现散布全场，真正的高光时刻寥寥」），而是它容许失败、容许无聊、容许一个人仅仅因为喜欢而继续。当艾德告诉场边小孩「别打棒球，对你有好处」时，他不是在幻灭——他比谁都清楚自己为什么还站在这块场地上。还须诚实地记下一笔：这块被悼念的闲暇世界几乎完全属于白人中年男性——影片未对此发问，观众不必替它回避。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VI 影评之三 ═══ -->
+  <div class="section" id="sec-essay3">
+    <div class="section-label">VI — ESSAY III</div>
+    <div class="section-title">记分员的凝视</div>
+    <div class="section-subtitle">Franny and the Cinema Audience</div>
+    <div class="prose">
+      <p>影片真正的中心人物，不是任何球员，而是记分员弗兰尼。他第一个到场，最后一个离开，为每一颗球记分——「他试图以自己的方式、按自己的条件记录并消化这段经验」。伦德在访谈中直接给出了读法：「他是观众的替身……他就像一个影院观众。」而全片唯一的一次溶接，是导演亲口指认的密码：「我们只从星空溶接到弗兰尼——所以那是从银河来的。」从宇宙到个体，从星图到记分簿：观看，是这部电影里与被观看等重的事件。</p>
+      <p>这个设计因怀斯曼的在场而加倍。为电台记者配音的弗雷德里克·怀斯曼，用五十年纪录片（《提提卡失序曲》《书缘：纽约公共图书馆》）定义了「观察式」的电影伦理；哈佛电影资料馆的专文因此把《高弧慢球》放进「细致入微的观察传统」。一位毕生拍摄真实机构的导演，在一部虚构电影里成为「画外之声」——电台晨间新闻宣布球场的死刑，复古广告从休息区的收录机里飘出：画外世界在这部电影里只有声音，正如球场在这群人的生活里只有这一个下午。</p>
+      <p>于是影片结尾的隐喻完成了闭合：裁判走了，唯一的办法是「把场地照亮」——「就像我们拍电影时那样，我们需要给场景打光」，伦德笑着说。车灯亮起的那一刻，观众与弗兰尼合为一体：都是在一块正在消失的场地上，借着人为的光，坚持看完最后一场。电影散场与球赛散场，在这个镜头里是同一件事。</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VII 技术细部 ═══ -->
+  <div class="section" id="sec-tech">
+    <div class="section-label">VII — CRAFTSMANSHIP</div>
+    <div class="section-title">技术细部分析</div>
+    <div class="section-subtitle">Camera, Sound, Edit</div>
+    <div class="sub-heading">摄影：格雷格·探戈的「伦德仿作」</div>
+    <div class="prose"><p>伦德本人是摄影师（为陶尔米纳等掌镜），本片却交给了挚友格雷格·探戈——导演自述勘景全部亲力亲为，「找到这块场地后，我知道要在这里花很多时间」。InReviewOnline 的评语别致：探戈「惟妙惟肖地模仿了伦德本人的掌镜」——他的语法是固定的机位与漫长的耐心，在群像调度中克制地使用变焦与横摇，让谈话在画框内自行发生。低照度夜戏（车灯球场）是全片摄影的成人礼：光源只有车头灯与记分席的灯，球场从熟悉的公共空间退化为一块抽象的光斑之地。</p>
+    <div class="sub-heading">声音：电台作为画外世界</div>
+    <div class="prose"><p>全片的空间是封闭的（无闪回、无场外戏），声音却是开的：怀斯曼的晨间新闻、卡斯蒂廖内饰演的播报员对本行的牢骚、休息区收录机里的复古广告与第七局伸展时的《带我去球场》——画外世界的全部信息经由电台进入，恰如老式转播把球场带给不在场的人。片尾的声音设计同样著名：画外的烟花与钟楼钟声「明确宣告了比赛的终结」（BOMB）。</p></div>
+    <div class="sub-heading">剪辑：导演自剪与「省略的艺术」</div>
+    <div class="prose"><p>伦德亲自剪辑。他在 InReviewOnline 访谈〈拥抱省略〉中谈到从早期「蔡明亮、《双车道柏油路》」式的慢电影构想里「找到平衡」：删除叙事性钩子，保留时间流逝的质感。大量攻守发生在画外（只闻其声），剪辑把注意力全部让给等待与闲谈——「省略」不是回避，而是选择看什么、不看什么的价值排序。</p></div>
+    <div class="sub-heading">画幅与制式</div>
+    <div class="prose"><p>截至本刊发稿，片方未公开画幅与拍摄制式的权威说明；本刊不作猜测，仅注明「未确认」。观感上的稳定构图与颗粒质感，请以影院放映为准。</p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ VIII 观影指南 ═══ -->
+  <div class="section" id="sec-guide">
+    <div class="section-label">VIII — VIEWING GUIDE</div>
+    <div class="section-title">观影指南</div>
+    <div class="section-subtitle">How &amp; Where to Watch</div>
+    <div class="format-item"><span class="rank">01</span><span class="name">艺术影院大银幕（美日已映）</span><span class="note">首选　光线结构与夜戏收益最大</span></div>
+    <div class="format-item"><span class="rank">02</span><span class="name">蓝光／数字版（北美已发）</span><span class="note">Music Box 发行；2025 秋蓝光上市</span></div>
+    <div class="format-item"><span class="rank">03</span><span class="name">流媒体与影展（关注艺联与节展放映）</span><span class="note">中国大陆暂无档期信息（截至 2026.08.27）</span></div>
+    <div class="meander"></div>
+    <table class="specs">
+      <tr><td>戛纳首映</td><td>2024.05.09（导演双周，竞逐金摄影机奖）</td></tr>
+      <tr><td>美国</td><td>2025.03.07（Music Box Films）</td></tr>
+      <tr><td>日本</td><td>2025 秋（片名《さよならはスローボールで》）</td></tr>
+      <tr><td>中国大陆</td><td>无档期信息（豆瓣条目《高弧慢球》已收录，评分 7.4，评价两极（2026.08.27 查询））</td></tr>
+    </table>
+    <div style="font-size:13px;color:var(--muted);margin-top:10px;line-height:1.75">观影提示：不需要任何棒球知识——影片自释全部必要的规则与俚语；需要的是一段完整的不被打断的时间，和一点对「无事发生」的耐心。</div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ IX 译丛 ═══ -->
+  <div class="section" id="sec-trans">
+    <div class="section-label">IX — TRANSLATIONS</div>
+    <div class="section-title">译丛</div>
+    <div class="section-subtitle">Two Translated Readings</div>
+    <div class="prose">
+      <p>以下两篇为本期核心学术文本的<strong>长节译</strong>（编辑部试译，直译为主；所据为公开网络版，节译范围随文注明，引用请以原文为准）。</p>
+
+      <p><strong>之一　电影与棒球共同的危机（访谈节译）</strong></p>
+      <div class="trans-block">
+        <div class="trans-orig">I see a parallel between the crisis that baseball is in and the crisis for independent movies. I see that parallel with maybe cinema as an art form in general… I think movies are a conversation; they're an invitation to experience something new… I've always been drawn more to movies as a way to experience space and time differently; not to be wrapped up in a plot.</div>
+        <div class="trans-zh">「我看见棒球所处的危机与独立电影的危机之间的平行——也许可以推及作为艺术形式的电影整体。……电影是一种对话；它是一份邀请，邀你去经验新的东西，走进一种你可能并不熟悉的氛围，去感受人物正在经历的一切。我一直更被『用电影以不同的方式经验空间与时间』所吸引，而不是被情节裹挟。」</div>
+        <span class="trans-src">卡森·伦德答《电影人》Cineaste（Paul Risker 采，2025 夏季号网络版）· <a href="https://www.cineaste.com/summer2025/cinema-and-baseballs-shared-crisis-an-interview-about-eephus-with-carson-lund/">原文</a>（节译自访谈首节）</span>
+      </div>
+      <div class="trans-block">
+        <div class="trans-orig">When the umpire leaves… they try to envision a little world where there's a kind of imperfect but fluid democracy at work… I'm trying to make you think differently about space and time… In the current world, that's one of the most political gestures you can make, because time is so weaponized… to make everything have some sort of monetary value.</div>
+        <div class="trans-zh">「裁判离开之后……他们在试着构想一个小小的世界，那里运行着一种不完美但流动的民主。……我在试图让你对空间与时间产生不同的思考。在当下这个世界，这是政治性最强的姿态之一——因为时间被如此武器化，让一切都具有某种货币价值。」</div>
+        <span class="trans-src">同上访谈（节译自政治性问答两节）· <a href="https://www.cineaste.com/summer2025/cinema-and-baseballs-shared-crisis-an-interview-about-eephus-with-carson-lund/">原文</a></span>
+      </div>
+
+      <p><strong>之二　如此不自然地慢（论文节译）</strong></p>
+      <div class="trans-block">
+        <div class="trans-orig">Once the first pitch is actually thrown, Eephus subscribes to the architectural tenet that "form ever follows function." It crawls forward at such a subdued rate that you barely know which inning it is… Large swaths of Eephus's action occur off-screen; the only indication that anything happened at all might be the crack of the bat…</div>
+        <div class="trans-zh">「第一颗球真正投出之后，《高弧慢球》便奉行起建筑学那条『形式永远追随功能』的信条。它以如此克制的速率缓缓爬行，以至于观看时你几乎不知道现在是第几局。……影片的大部分动作发生在画外；某件事发生过的一切迹象，可能只是那一声球棒击球的脆响。」</div>
+        <span class="trans-src">马修·里奇〈So Unnaturally Slow〉，《洛杉矶书评》· <a href="https://lareviewofbooks.org/article/so-unnaturally-slow">原文</a>（节译自影片中段分析两节）</span>
+      </div>
+      <div class="trans-block">
+        <div class="trans-orig">Baseball has a funny way of letting you know when it's done with you… Baseball moves rather slowly, so it never feels like a surprise when the time comes… It allows you to steal a few seconds here and there, fighting for the opportunity to extend your baseball life for a little bit longer… "Is this really how it's going to end?" is asked quietly, from the darkness…</div>
+        <div class="trans-zh">「棒球自会以一种有趣的方式告诉你，它何时不再需要你。……棒球进行得相当慢，所以时刻到来时从不显得突然……它允许你这里偷几秒、那里偷几秒，为把棒球生命再延长一点点而争取。……『真的就这样结束了吗？』——这句问话，轻轻地从黑暗中传来。」</div>
+        <span class="trans-src">同上论文（节译自结尾两节）· <a href="https://lareviewofbooks.org/article/so-unnaturally-slow">原文</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- ═══ 号外 ═══ -->
+  <div class="extra-section" id="sec-extra">
+    <div class="extra-banner"><div class="label">号　外</div></div>
+    <div style="text-align:center;margin-bottom:8px">
+      <div style="font-family:'Playfair Display',serif;font-size:13px;color:var(--crimson);letter-spacing:0.15em;font-style:italic">SPECIAL SUPPLEMENT</div>
+    </div>
+    <div class="section-title" style="text-align:center;font-size:20px;margin-bottom:4px">Omnes：一群朋友的电影小组</div>
+    <div class="section-subtitle" style="text-align:center">集体创作作为一种生产关系</div>
+    <div class="meander"></div>
+    <div class="prose">
+      <p><strong>§1　「公司」还是「小组」</strong></p>
+      <p>《高弧慢球》的字幕升起时，出品方一栏写着 Omnes Films——拉丁语的「所有人」。filmmaker 杂志 2024 年戛纳期间专访了这个小组的双子星：本片导演卡森·伦德，与同届带着《Miller's Point 的平安夜》入围的泰勒·陶尔米纳。当被问及「Omnes 是一家公司吗」，伦德的回答是：「公司意味着注册法人，而我们目前没有。我想，眼下我们仍然把它看作一个集体（collective）。」「一群朋友，在彼此的热情项目上互相干活。」陶尔米纳补充。谁算成员？「谁出现在我们所有的聚会上，一起来烧烤，谁就是。」——正式成员名单大约五人：伦德、陶尔米纳、迈克尔·巴斯塔、乔纳森·戴维斯、埃里克·伦德，另有洛雷娜·阿尔瓦拉多等长期合作者。</p>
+
+      <div class="sub-heading-crimson">§2　互换的角色</div>
+      <p>Omnes 的运转方式，用 filmmaker 的话说是「switch hit」（棒球术语：左右开弓）——成员在彼此的项目里换位：伦德掌镜了陶尔米纳的《Miller's Point 的平安夜》，陶尔米纳监制了《高弧慢球》；伦德拍摄并剪辑了戴维斯的《海妖拓扑学》，那也是小组的起点之一（另一部是陶尔米纳的《火腿三明治》，两片同为微预算，2021 年让小组登上 filmmaker「25 张新面孔」）。2024 年，两部长片同届入围戛纳导演双周——一个没有法人的「集体」，完成了多数独立公司梦寐以求的双响炮。问及「权利与义务」，陶尔米纳的答案反商业逻辑：「不是『我帮你挠背、你帮我挠』，而是——『你在拍电影？太棒了！』」</p>
+
+      <div class="sub-heading-crimson">§3　「文化衰朽」的厂牌</div>
+      <p>没有宣言，但有母题。陶尔米纳承认，「文化衰朽」不知为何贯穿着他们拍过的所有电影——从《火腿三明治》的成人礼餐厅，到《高弧慢球》的待拆球场，再到《Miller's Point 的平安夜》的郊区圣诞：都是美国日常空间正在褪色的时刻。他们也清楚「厂牌」的分量：伦德白天在经纪公司上班，对 A24 式的品牌效应有清醒的观察——「人们开始意识到集体的存在。Omnes 不是 A24，但我们确实把它看作一枚印鉴，假以时日，它会赋予作品某种品质与感受力。」</p>
+      <p>把这三条放在一起——无宣言、互换角色、共同母题——Omnes 提供了作者制之外的一种当代答案：在预算更薄、发行更难的独立电影现场，<strong>互相成为对方的生产资料</strong>。当作者论把「一个人的视线」神圣化，Omnes 说：也可以是一群朋友共享的视线。这恰好回应了《高弧慢球》的内部政治——裁判离场之后，一群业余者自己把比赛打了下去。当然，这个类比只在「自我组织」的层面成立：《高弧慢球》同样依靠法国 Nord-Ouest 合制、专业发行与节展体系走向观众——「无法人的集体」是创作的自我叙述，而非工业的全貌。但正是在资金的缝隙里坚持互相拍片的这一点上，电影小组就是独立电影的星期天联盟。</p>
+      <p style="font-size:13px;color:var(--muted);line-height:1.75">〔注〕本节据 filmmaker 杂志 2024 年戛纳专访（<a href="https://filmmakermagazine.com/126108-omnes-films-cannes" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">原文</a>）与 Omnes Films 官方站资料（<a href="https://www.omnesfilms.com" style="color:var(--bronze);text-decoration:none;border-bottom:1px dotted var(--bronze)">omnesfilms.com</a>）编写；MUBI Notebook 的伦德×陶尔米纳对谈未能取得。</p>
+    </div>
+  </div>
+
+  <!-- ═══ 二维码 ═══ -->
+  <div class="qr-section">
+    <img src="assets/qr-005.png" alt="扫码访问场刊">
+    <div class="label">扫码查看场刊全文</div>
+    <div class="url">ren1003497048-del.github.io/changkan/005.html</div>
+  </div>
+
+  <!-- ═══ 来源索引 ═══ -->
+  <div class="source-index">
+    <p><strong>学术与深度批评：</strong><a href="https://www.cineaste.com/summer2025/cinema-and-baseballs-shared-crisis-an-interview-about-eephus-with-carson-lund/">Cineaste 访谈（Paul Risker，2025 夏）</a>／<a href="https://lareviewofbooks.org/article/so-unnaturally-slow">LARB（Matthew Ritchie）</a>／<a href="https://reverseshot.org/reviews/entry/3262/eephus">Reverse Shot</a>／<a href="https://www.splittoothmedia.com/eephus">Split Tooth Media</a>／<a href="https://harvardfilmarchive.org/programs/make-way-for-tomorrow-carson-lunds-eephus">哈佛电影资料馆专文</a>／<a href="https://bombmagazine.org/articles/2025/03/17/carson-lund-eephus">BOMB</a>／<a href="https://inreviewonline.com/2024/06/03/embracing-the-ellipsis-an-interview-with-carson-lund">InReviewOnline 访谈</a>／<a href="https://filmmakermagazine.com/126108-omnes-films-cannes">filmmaker（Omnes 专访）</a>／<a href="https://www.lecinemaclub.com/journal/qa-with-carson-lund">Le Cinéma Club</a>／<a href="https://moveablefest.com/carson-lund-eephus">Moveable Fest</a>。未取得：Cahiers／Positif 相关评论（纸本）、MUBI Notebook 伦德×陶尔米纳对谈、Sight &amp; Sound 专文——均如实标注。</p>
+    <p><strong>节展与发行：</strong><a href="https://www.quinzaine-cineastes.fr/en/film/eephus">戛纳导演双周官方页</a>／<a href="https://www.musicboxfilms.com/film/eephus">Music Box Films 官方页</a>／<a href="https://www.omnesfilms.com">Omnes Films 官方站</a>。</p>
+    <p><strong>口碑与观众层：</strong>烂番茄／Metacritic／Letterboxd／豆瓣（评分均注明查询日期）；<a href="https://www.gqjapan.jp/article/20251016-sayonara-slow-ball-movie-review">GQ Japan</a>、<a href="https://cinemore.jp/jp/news-feature/4219/article_p1.html">cinemore 导演专访</a>（日本公映口径）；维基百科条目仅作背景核对，不列为学术依据。</p>
+    <p><strong>头图与素材：</strong>封面剧照与号外影片图来自 Omnes Films 官方站（omnesfilms.com）公开素材。</p>
+    <p><strong>关联阅读：</strong><a href="https://ren1003497048-del.github.io/changkan/004.html">第四期《突如其来》</a>（滨口龙介单片研究）／<a href="https://ren1003497048-del.github.io/changkan/sp-hamaguchi.html">学术特刊《滨口龙介：七个美学问题》</a>。</p>
+  </div>
+
+  <!-- ═══ 封底 ═══ -->
+  <div class="colophon">
+    <div class="mast">场　刊</div>
+    <div style="font-family:'Playfair Display',serif;font-size:11px;color:var(--bronze);letter-spacing:0.2em;margin-bottom:8px;font-style:italic">THE PROGRAMME</div>
+    <div class="info">
+      观影之前，先翻场刊<br><br>
+      第〇〇五期　高弧慢球（含号外）<br>
+      2026 年 8 月 27 日<br><br>
+      新片信息的深度速览 · 权威影评的汇编评注<br><br>
+      © 2026 The Programme · 场刊<br>
+      ren1003497048-del.github.io/changkan<br>
+      <a href="https://ren1003497048-del.github.io/changkan/archive.html">往期总目 · Archive</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+function toggleTopnav(e){e.stopPropagation();var p=document.getElementById('topnav-panel');p.style.display=p.style.display==='none'?'block':'none'}
+document.addEventListener('click',function(e){var p=document.getElementById('topnav-panel');if(p&&!p.contains(e.target)&&e.target.id!=='topnav-btn')p.style.display='none'});
+</script>
+</body>
+</html>
